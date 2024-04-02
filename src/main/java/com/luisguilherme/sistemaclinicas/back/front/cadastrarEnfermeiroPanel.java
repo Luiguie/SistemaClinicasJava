@@ -164,7 +164,7 @@ public class cadastrarEnfermeiroPanel extends CRUD_JPanel {
         rxLabel = new javax.swing.JLabel();
         rxComboBox = new javax.swing.JComboBox<>();
         backBtn = new javax.swing.JButton();
-        salvarBtnEnfermeiro = new javax.swing.JButton();
+        salvarBtn = new javax.swing.JButton();
 
         nomeLabel.setText("Nome");
 
@@ -219,10 +219,10 @@ public class cadastrarEnfermeiroPanel extends CRUD_JPanel {
             }
         });
 
-        salvarBtnEnfermeiro.setText("Salvar");
-        salvarBtnEnfermeiro.addActionListener(new java.awt.event.ActionListener() {
+        salvarBtn.setText("Salvar");
+        salvarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salvarBtnEnfermeiroActionPerformed(evt);
+                salvarBtnActionPerformed(evt);
             }
         });
 
@@ -291,7 +291,7 @@ public class cadastrarEnfermeiroPanel extends CRUD_JPanel {
                         .addGap(86, 86, 86))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarEnfermeiroLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(salvarBtnEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(salvarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
         cadastrarEnfermeiroLayout.setVerticalGroup(
@@ -382,8 +382,8 @@ public class cadastrarEnfermeiroPanel extends CRUD_JPanel {
                         .addComponent(rxLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rxComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                .addComponent(salvarBtnEnfermeiro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(salvarBtn)
                 .addGap(33, 33, 33))
         );
 
@@ -414,13 +414,13 @@ public class cadastrarEnfermeiroPanel extends CRUD_JPanel {
         getCl().show(getContainer(),"mainWindow");
     }//GEN-LAST:event_backBtnActionPerformed
 
-    private void salvarBtnEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarBtnEnfermeiroActionPerformed
+    private void salvarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarBtnActionPerformed
 
         if(cadastrar()){
             getCl().show(getContainer(),"mainWindow");
         }
         
-    }//GEN-LAST:event_salvarBtnEnfermeiroActionPerformed
+    }//GEN-LAST:event_salvarBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -456,7 +456,7 @@ public class cadastrarEnfermeiroPanel extends CRUD_JPanel {
     private javax.swing.JLabel ruaLabel;
     private javax.swing.JComboBox<String> rxComboBox;
     private javax.swing.JLabel rxLabel;
-    private javax.swing.JButton salvarBtnEnfermeiro;
+    private javax.swing.JButton salvarBtn;
     private javax.swing.JTextField setorField;
     private javax.swing.JLabel setorLabel;
     private javax.swing.JTextField telefoneField;

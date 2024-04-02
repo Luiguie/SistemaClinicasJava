@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class SistemaClinicas {
     
     private ArrayList<Enfermeiro> enfermeiros = new ArrayList<Enfermeiro>();
+    private ArrayList<Medico> medicos = new ArrayList<Medico>();
 
     public ArrayList<Enfermeiro> getEnfermeiros() {
         return enfermeiros;
@@ -21,6 +22,15 @@ public class SistemaClinicas {
     public void setEnfermeiros(ArrayList<Enfermeiro> enfermeiros) {
         this.enfermeiros = enfermeiros;
     }
+
+    public ArrayList<Medico> getMedicos() {
+        return medicos;
+    }
+
+    public void setMedicos(ArrayList<Medico> medicos) {
+        this.medicos = medicos;
+    }
+    
     
     
 }

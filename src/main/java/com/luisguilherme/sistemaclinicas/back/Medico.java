@@ -13,10 +13,19 @@ import java.util.ArrayList;
 import java.util.Date;
 public class Medico extends AtendenteHospitalar{
     private long idMedico;
+    private static long countId=0;
     private int numeroCRM;
     private ArrayList<String> areasEspecialidade = new ArrayList<String>();
     private boolean cirurgiao;
+    
+    public static long getcountId() {
+        return countId;
+    }
 
+    public static void setIcountId(long id) {
+        countId = id;
+    }
+    
     public long getIdMedico() {
         return idMedico;
     }
@@ -54,6 +63,7 @@ public class Medico extends AtendenteHospitalar{
         this.idMedico = idMedico;
         this.numeroCRM = numeroCRM;
         this.cirurgiao = cirurgiao;
+        countId+=1;
     }
     
 }
