@@ -57,6 +57,16 @@ public class DadoPessoal {
     public void setGenero(Genero genero) {
         this.genero = genero;
     }
+
+    public DadoPessoal(String nomeCompleto, LocalDate dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+        this.nomeCompleto = nomeCompleto;
+        this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
+        this.contato = contato;
+        this.genero = genero;
+    }
+    
+    
     
     
     

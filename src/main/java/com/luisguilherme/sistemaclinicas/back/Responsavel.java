@@ -11,4 +11,12 @@ package com.luisguilherme.sistemaclinicas.back;
 public class Responsavel extends ContatoTelEmail{
     private String idResponsavel;
     private String nomeResponsavel;
+
+    public Responsavel(String idResponsavel, String nomeResponsavel, String telefone, String celular, String email) {
+        super(telefone, celular, email);
+        this.idResponsavel = idResponsavel;
+        this.nomeResponsavel = nomeResponsavel;
+    }
+    
+    
 }

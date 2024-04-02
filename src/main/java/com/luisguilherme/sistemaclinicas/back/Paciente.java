@@ -66,5 +66,15 @@ public class Paciente extends DadoPessoal{
     public void setContatoResponsavel(ArrayList<Responsavel> contatoResponsavel) {
         this.contatoResponsavel = contatoResponsavel;
     }
+
+    public Paciente(long idPaciente, int idade, LocalDate dataCadastro, String obsGeral, String nomeCompleto, LocalDate dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+        super(nomeCompleto, dataNascimento, endereco, contato, genero);
+        this.idPaciente = idPaciente;
+        this.idade = idade;
+        this.dataCadastro = dataCadastro;
+        this.obsGeral = obsGeral;
+    }
+    
+    
     
 }

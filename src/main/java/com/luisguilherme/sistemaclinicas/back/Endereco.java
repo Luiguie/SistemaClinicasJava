@@ -64,6 +64,17 @@ public class Endereco {
     public void setCep(int cep) {
         this.cep = cep;
     }
+
+    public Endereco(String rua, int numero, String bairro, String cidade, String estado, int cep) {
+        this.rua = rua;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+    }
+    
+    
     
     
     

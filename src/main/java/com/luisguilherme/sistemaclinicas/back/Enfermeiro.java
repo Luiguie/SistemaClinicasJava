@@ -4,6 +4,8 @@
  */
 package com.luisguilherme.sistemaclinicas.back;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Guilg
@@ -27,5 +29,13 @@ public class Enfermeiro extends AtendenteHospitalar{
     public void setTreinadoOpRX(boolean treinadoOpRX) {
         this.treinadoOpRX = treinadoOpRX;
     }
+
+    public Enfermeiro(long idEnfermeiro, boolean treinadoOpRX, String setor, int chSemanal, String nomeCompleto, LocalDate dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+        super(setor, chSemanal, nomeCompleto, dataNascimento, endereco, contato, genero);
+        this.idEnfermeiro = idEnfermeiro;
+        this.treinadoOpRX = treinadoOpRX;
+    }
+    
+    
     
 }

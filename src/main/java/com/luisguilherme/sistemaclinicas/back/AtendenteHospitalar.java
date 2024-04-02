@@ -4,6 +4,8 @@
  */
 package com.luisguilherme.sistemaclinicas.back;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Guilg
@@ -26,5 +28,13 @@ public class AtendenteHospitalar extends DadoPessoal{
     public void setChSemanal(int chSemanal) {
         this.chSemanal = chSemanal;
     }
+
+    public AtendenteHospitalar(String setor, int chSemanal, String nomeCompleto, LocalDate dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+        super(nomeCompleto, dataNascimento, endereco, contato, genero);
+        this.setor = setor;
+        this.chSemanal = chSemanal;
+    }
+    
+    
     
 }

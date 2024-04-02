@@ -36,5 +36,13 @@ public class ContatoTelEmail {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public ContatoTelEmail(String telefone, String celular, String email) {
+        this.telefone = telefone;
+        this.celular = celular;
+        this.email = email;
+    }
+    
+    
     
 }

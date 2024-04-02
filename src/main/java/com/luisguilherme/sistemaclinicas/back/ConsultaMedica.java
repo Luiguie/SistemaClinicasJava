@@ -72,6 +72,17 @@ public class ConsultaMedica {
     public void setIndicacaoCirurgica(boolean indicacaoCirurgica) {
         this.indicacaoCirurgica = indicacaoCirurgica;
     }
+
+    public ConsultaMedica(long idConsulta, long idPaciente, long idMedico, String exameQueixa, String diagnostico, String prescricao, boolean indicacaoCirurgica) {
+        this.idConsulta = idConsulta;
+        this.idPaciente = idPaciente;
+        this.idMedico = idMedico;
+        this.exameQueixa = exameQueixa;
+        this.diagnostico = diagnostico;
+        this.prescricao = prescricao;
+        this.indicacaoCirurgica = indicacaoCirurgica;
+    }
+    
     
     
 }
