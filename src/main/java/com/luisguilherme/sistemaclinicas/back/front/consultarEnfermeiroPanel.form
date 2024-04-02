@@ -74,7 +74,7 @@
                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jLabel14" min="-2" pref="180" max="-2" attributes="0"/>
+                          <Component id="infoEspecificasLabel" min="-2" pref="180" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -98,7 +98,7 @@
                                       <Component id="cidadeFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
                                       <Component id="estadoFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
                                       <Component id="CEPFieldlEnfermeiro" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel13" alignment="0" pref="170" max="32767" attributes="0"/>
+                                      <Component id="infoGeraisLabel" alignment="0" pref="170" max="32767" attributes="0"/>
                                       <Component id="bairroFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="bairroLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
@@ -138,7 +138,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                          <Component id="infoGeraisLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="15" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
@@ -202,7 +202,7 @@
                       <Component id="generoComboBoxEnfermeiro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                  <Component id="infoEspecificasLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
@@ -233,6 +233,10 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="nomeFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="nomeLabelEnfermeiro">
           <Properties>
@@ -250,6 +254,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="ruaFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="numeroLabelEnfermeiro">
           <Properties>
@@ -257,6 +265,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="numeroFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="bairroLabelEnfermeiro">
           <Properties>
@@ -264,6 +276,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="estadoFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="estadoLabelEnfermeiro">
           <Properties>
@@ -271,6 +287,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cidadeFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cidadeLabelEnfermeiro">
           <Properties>
@@ -278,10 +298,21 @@
           </Properties>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="nascimentoFieldEnfermeiro">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="bairroFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="CEPFieldlEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="CEPLabelEnfermeiro">
           <Properties>
@@ -289,6 +320,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="telefoneFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="telefoneLabelEnfermeiro">
           <Properties>
@@ -296,6 +331,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="celularFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="celularLabelEnfermeiro">
           <Properties>
@@ -308,6 +347,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="emailFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="generoLabelEnfermeiro">
           <Properties>
@@ -323,18 +366,19 @@
               </StringArray>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel13">
+        <Component class="javax.swing.JLabel" name="infoGeraisLabel">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es Gerais"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel14">
+        <Component class="javax.swing.JLabel" name="infoEspecificasLabel">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es Especificas"/>
@@ -346,8 +390,16 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="setorFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="chFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="chLabelEnfermeiro">
           <Properties>
@@ -355,6 +407,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="idFieldEnfermeiro">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="idLabelEnfermeiro">
           <Properties>
@@ -374,6 +430,7 @@
                 <StringItem index="1" value="N&#xe3;o Treinado"/>
               </StringArray>
             </Property>
+            <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

@@ -89,8 +89,8 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel14" alignment="0" pref="170" max="32767" attributes="0"/>
-                              <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
+                              <Component id="infoEspecificasLabel" alignment="0" pref="170" max="32767" attributes="0"/>
+                              <Component id="infoGeraisLabel" alignment="0" max="32767" attributes="0"/>
                               <Component id="bairroFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
                               <Component id="estadoFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
                               <Component id="cidadeFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
@@ -133,7 +133,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                          <Component id="infoGeraisLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -211,7 +211,7 @@
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                  <Component id="infoEspecificasLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -342,13 +342,13 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel13">
+        <Component class="javax.swing.JLabel" name="infoGeraisLabel">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es Gerais"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel14">
+        <Component class="javax.swing.JLabel" name="infoEspecificasLabel">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es Especificas"/>

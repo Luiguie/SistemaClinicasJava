@@ -81,8 +81,8 @@ public class cadastrarEnfermeiroPanel extends javax.swing.JPanel {
         emailFieldEnfermeiro = new javax.swing.JTextField();
         generoLabelEnfermeiro = new javax.swing.JLabel();
         generoComboBoxEnfermeiro = new javax.swing.JComboBox<>();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        infoGeraisLabel = new javax.swing.JLabel();
+        infoEspecificasLabel = new javax.swing.JLabel();
         setorLabelEnfermeiro = new javax.swing.JLabel();
         setorFieldEnfermeiro = new javax.swing.JTextField();
         chFieldEnfermeiro = new javax.swing.JTextField();
@@ -121,11 +121,11 @@ public class cadastrarEnfermeiroPanel extends javax.swing.JPanel {
         generoComboBoxEnfermeiro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
         generoComboBoxEnfermeiro.setToolTipText("");
 
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Informações Gerais");
+        infoGeraisLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoGeraisLabel.setText("Informações Gerais");
 
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Informações Especificas");
+        infoEspecificasLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoEspecificasLabel.setText("Informações Especificas");
 
         setorLabelEnfermeiro.setText("Setor");
 
@@ -190,8 +190,8 @@ public class cadastrarEnfermeiroPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarEnfermeiroLayout.createSequentialGroup()
                         .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(infoEspecificasLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                            .addComponent(infoGeraisLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(bairroFieldEnfermeiro)
                             .addComponent(estadoFieldEnfermeiro)
                             .addComponent(cidadeFieldEnfermeiro)
@@ -225,7 +225,7 @@ public class cadastrarEnfermeiroPanel extends javax.swing.JPanel {
                 .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addComponent(jLabel13))
+                        .addComponent(infoGeraisLabel))
                     .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(backBtnEnfermeiro)))
@@ -286,7 +286,7 @@ public class cadastrarEnfermeiroPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(generoComboBoxEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(47, 47, 47)
-                .addComponent(jLabel14)
+                .addComponent(infoEspecificasLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
@@ -405,8 +405,8 @@ public class cadastrarEnfermeiroPanel extends javax.swing.JPanel {
     private javax.swing.JLabel generoLabelEnfermeiro;
     private javax.swing.JTextField idFieldEnfermeiro;
     private javax.swing.JLabel idLabelEnfermeiro;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel infoEspecificasLabel;
+    private javax.swing.JLabel infoGeraisLabel;
     private com.toedter.calendar.JDateChooser nascimentoFieldEnfermeiro;
     private javax.swing.JLabel nascimentoLabelEnfermeiro;
     private javax.swing.JTextField nomeFieldEnfermeiro;
