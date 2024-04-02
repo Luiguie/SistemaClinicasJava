@@ -2,16 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.luisguilherme.sistemaclinicas.back;
+package com.luisguilherme.sistemaclinicas.back.front;
 
 /**
  *
  * @author Guilg
  */
+import com.luisguilherme.sistemaclinicas.back.ContatoTelEmail;
+import com.luisguilherme.sistemaclinicas.back.Endereco;
+import com.luisguilherme.sistemaclinicas.back.Enfermeiro;
+import com.luisguilherme.sistemaclinicas.back.Genero;
 import java.awt.CardLayout;
+import java.time.ZoneId;
+import java.util.ArrayList;
 public class GUI extends javax.swing.JFrame {
 
     private CardLayout cl;
+    private ArrayList<Enfermeiro> enfermeiros = new ArrayList<Enfermeiro>();
     
     public GUI() {
         initComponents();
@@ -59,43 +66,6 @@ public class GUI extends javax.swing.JFrame {
         consMedico = new javax.swing.JButton();
         labelMedico = new javax.swing.JLabel();
         remMedico = new javax.swing.JButton();
-        cadastrarEnfermeiro = new javax.swing.JPanel();
-        nomeFieldEnfermeiro = new javax.swing.JTextField();
-        nomeLabelEnfermeiro = new javax.swing.JLabel();
-        nascimentoLabelEnfermeiro = new javax.swing.JLabel();
-        ruaLabelEnfermeiro = new javax.swing.JLabel();
-        ruaFieldEnfermeiro = new javax.swing.JTextField();
-        numeroLabelEnfermeiro = new javax.swing.JLabel();
-        numeroFieldEnfermeiro = new javax.swing.JTextField();
-        bairroLabelEnfermeiro = new javax.swing.JLabel();
-        estadoFieldEnfermeiro = new javax.swing.JTextField();
-        estadoLabelEnfermeiro = new javax.swing.JLabel();
-        cidadeFieldEnfermeiro = new javax.swing.JTextField();
-        cidadeLabelEnfermeiro = new javax.swing.JLabel();
-        nascimentoFieldEnfermeiro = new com.toedter.calendar.JDateChooser();
-        bairroFieldEnfermeiro = new javax.swing.JTextField();
-        CEPFieldlEnfermeiro = new javax.swing.JTextField();
-        CEPLabelEnfermeiro = new javax.swing.JLabel();
-        telefoneFieldEnfermeiro = new javax.swing.JTextField();
-        telefoneLabelEnfermeiro = new javax.swing.JLabel();
-        celularFieldEnfermeiro = new javax.swing.JTextField();
-        celularLabelEnfermeiro = new javax.swing.JLabel();
-        emailLabelEnfermeiro = new javax.swing.JLabel();
-        emailFieldEnfermeiro = new javax.swing.JTextField();
-        generoLabelEnfermeiro = new javax.swing.JLabel();
-        generoComboBoxEnfermeiro = new javax.swing.JComboBox<>();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        setorLabelEnfermeiro = new javax.swing.JLabel();
-        setorFieldEnfermeiro = new javax.swing.JTextField();
-        chFieldEnfermeiro = new javax.swing.JTextField();
-        chLabelEnfermeiro = new javax.swing.JLabel();
-        idFieldEnfermeiro = new javax.swing.JTextField();
-        idLabelEnfermeiro = new javax.swing.JLabel();
-        rxLabelEnfermeiro = new javax.swing.JLabel();
-        rxComboBoxEnfermeiro = new javax.swing.JComboBox<>();
-        backBtnEnfermeiro = new javax.swing.JButton();
-        salvarBtnEnfermeiro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -338,226 +308,6 @@ public class GUI extends javax.swing.JFrame {
 
         container.add(mainWindow, "mainWindow");
 
-        nomeLabelEnfermeiro.setText("Nome");
-
-        nascimentoLabelEnfermeiro.setText("Data de Nascimento");
-
-        ruaLabelEnfermeiro.setText("Rua");
-
-        numeroLabelEnfermeiro.setText("Numero");
-
-        bairroLabelEnfermeiro.setText("Bairro");
-
-        estadoLabelEnfermeiro.setText("Estado");
-
-        cidadeLabelEnfermeiro.setText("Cidade");
-
-        CEPLabelEnfermeiro.setText("CEP");
-
-        telefoneLabelEnfermeiro.setText("Telefone");
-
-        celularLabelEnfermeiro.setText("Celular");
-
-        emailLabelEnfermeiro.setText("Email");
-
-        generoLabelEnfermeiro.setText("Genero");
-
-        generoComboBoxEnfermeiro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
-        generoComboBoxEnfermeiro.setToolTipText("");
-
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Informações Gerais");
-
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Informações Especificas");
-
-        setorLabelEnfermeiro.setText("Setor");
-
-        chLabelEnfermeiro.setText("Carga Horaria Semanal");
-
-        idLabelEnfermeiro.setText("Id Enfermeiro");
-
-        rxLabelEnfermeiro.setText("Treinado em Raio X?");
-
-        rxComboBoxEnfermeiro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Treinado", "Não Treinado" }));
-
-        backBtnEnfermeiro.setText("<----");
-        backBtnEnfermeiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnEnfermeiroActionPerformed(evt);
-            }
-        });
-
-        salvarBtnEnfermeiro.setText("Salvar");
-        salvarBtnEnfermeiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salvarBtnEnfermeiroActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout cadastrarEnfermeiroLayout = new javax.swing.GroupLayout(cadastrarEnfermeiro);
-        cadastrarEnfermeiro.setLayout(cadastrarEnfermeiroLayout);
-        cadastrarEnfermeiroLayout.setHorizontalGroup(
-            cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(numeroLabelEnfermeiro, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(ruaLabelEnfermeiro, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(nascimentoLabelEnfermeiro, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(nomeLabelEnfermeiro, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(ruaFieldEnfermeiro, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(numeroFieldEnfermeiro, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(nascimentoFieldEnfermeiro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(nomeFieldEnfermeiro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(setorLabelEnfermeiro)
-                            .addComponent(setorFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chLabelEnfermeiro)
-                            .addComponent(chFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(backBtnEnfermeiro)))
-                .addGap(59, 59, 59)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(idLabelEnfermeiro, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idFieldEnfermeiro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rxLabelEnfermeiro)
-                            .addComponent(rxComboBoxEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bairroFieldEnfermeiro)
-                            .addComponent(estadoFieldEnfermeiro)
-                            .addComponent(cidadeFieldEnfermeiro)
-                            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CEPLabelEnfermeiro)
-                                    .addComponent(cidadeLabelEnfermeiro)
-                                    .addComponent(estadoLabelEnfermeiro)
-                                    .addComponent(bairroLabelEnfermeiro))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(CEPFieldlEnfermeiro))
-                        .addGap(68, 68, 68)
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(telefoneLabelEnfermeiro)
-                            .addComponent(telefoneFieldEnfermeiro)
-                            .addComponent(celularLabelEnfermeiro)
-                            .addComponent(celularFieldEnfermeiro)
-                            .addComponent(emailLabelEnfermeiro)
-                            .addComponent(emailFieldEnfermeiro)
-                            .addComponent(generoLabelEnfermeiro)
-                            .addComponent(generoComboBoxEnfermeiro, javax.swing.GroupLayout.Alignment.TRAILING, 0, 170, Short.MAX_VALUE))
-                        .addGap(86, 86, 86))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarEnfermeiroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(salvarBtnEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
-        );
-        cadastrarEnfermeiroLayout.setVerticalGroup(
-            cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel13))
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(backBtnEnfermeiro)))
-                .addGap(18, 18, 18)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addComponent(bairroLabelEnfermeiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bairroFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(estadoLabelEnfermeiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(estadoFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cidadeLabelEnfermeiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cidadeFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CEPLabelEnfermeiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CEPFieldlEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nomeLabelEnfermeiro)
-                            .addComponent(telefoneLabelEnfermeiro))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nomeFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(telefoneFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                                .addComponent(nascimentoLabelEnfermeiro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nascimentoFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                                .addComponent(celularLabelEnfermeiro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(celularFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                                .addComponent(ruaLabelEnfermeiro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ruaFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                                .addComponent(emailLabelEnfermeiro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(emailFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                                .addComponent(numeroLabelEnfermeiro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(numeroFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                                .addComponent(generoLabelEnfermeiro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(generoComboBoxEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(47, 47, 47)
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addComponent(setorLabelEnfermeiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(setorFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addComponent(idLabelEnfermeiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(idFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addComponent(chLabelEnfermeiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chFieldEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addComponent(rxLabelEnfermeiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rxComboBoxEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                .addComponent(salvarBtnEnfermeiro)
-                .addGap(33, 33, 33))
-        );
-
-        container.add(cadastrarEnfermeiro, "cadastrarEnfermeiro");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -605,11 +355,15 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_remMedicoActionPerformed
 
     private void cadEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadEnfermeiroActionPerformed
-        cl.show(container,"cadastrarEnfermeiro");
+        cadastrarEnfermeiroPanel panel = new cadastrarEnfermeiroPanel(cl, container);
+        container.add(panel, "cadastraEnfermeiro");
+        cl.show(container, "cadastraEnfermeiro");
     }//GEN-LAST:event_cadEnfermeiroActionPerformed
 
     private void consEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consEnfermeiroActionPerformed
-        // TODO add your handling code here:
+        consultarEnfermeiroPanel panel = new consultarEnfermeiroPanel(cl, container);
+        container.add(panel, "consultaEnfermeiro");
+        cl.show(container, "consultaEnfermeiro");
     }//GEN-LAST:event_consEnfermeiroActionPerformed
 
     private void editEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEnfermeiroActionPerformed
@@ -635,14 +389,6 @@ public class GUI extends javax.swing.JFrame {
     private void remConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remConsultasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_remConsultasActionPerformed
-
-    private void backBtnEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnEnfermeiroActionPerformed
-        cl.show(container,"mainWindow");
-    }//GEN-LAST:event_backBtnEnfermeiroActionPerformed
-
-    private void salvarBtnEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarBtnEnfermeiroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_salvarBtnEnfermeiroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -681,22 +427,10 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CEPFieldlEnfermeiro;
-    private javax.swing.JLabel CEPLabelEnfermeiro;
-    private javax.swing.JButton backBtnEnfermeiro;
-    private javax.swing.JTextField bairroFieldEnfermeiro;
-    private javax.swing.JLabel bairroLabelEnfermeiro;
     private javax.swing.JButton cadConsultas;
     private javax.swing.JButton cadEnfermeiro;
     private javax.swing.JButton cadMedico;
     private javax.swing.JButton cadPaciente;
-    private javax.swing.JPanel cadastrarEnfermeiro;
-    private javax.swing.JTextField celularFieldEnfermeiro;
-    private javax.swing.JLabel celularLabelEnfermeiro;
-    private javax.swing.JTextField chFieldEnfermeiro;
-    private javax.swing.JLabel chLabelEnfermeiro;
-    private javax.swing.JTextField cidadeFieldEnfermeiro;
-    private javax.swing.JLabel cidadeLabelEnfermeiro;
     private javax.swing.JButton consConsultas;
     private javax.swing.JButton consEnfermeiro;
     private javax.swing.JButton consMedico;
@@ -706,39 +440,14 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton editEnfermeiro;
     private javax.swing.JButton editMedico;
     private javax.swing.JButton editPaciente;
-    private javax.swing.JTextField emailFieldEnfermeiro;
-    private javax.swing.JLabel emailLabelEnfermeiro;
-    private javax.swing.JTextField estadoFieldEnfermeiro;
-    private javax.swing.JLabel estadoLabelEnfermeiro;
-    private javax.swing.JComboBox<String> generoComboBoxEnfermeiro;
-    private javax.swing.JLabel generoLabelEnfermeiro;
-    private javax.swing.JTextField idFieldEnfermeiro;
-    private javax.swing.JLabel idLabelEnfermeiro;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel labelConsultas;
     private javax.swing.JLabel labelEnfermeiro;
     private javax.swing.JLabel labelMedico;
     private javax.swing.JLabel labelPaciente;
     private javax.swing.JPanel mainWindow;
-    private com.toedter.calendar.JDateChooser nascimentoFieldEnfermeiro;
-    private javax.swing.JLabel nascimentoLabelEnfermeiro;
-    private javax.swing.JTextField nomeFieldEnfermeiro;
-    private javax.swing.JLabel nomeLabelEnfermeiro;
-    private javax.swing.JTextField numeroFieldEnfermeiro;
-    private javax.swing.JLabel numeroLabelEnfermeiro;
     private javax.swing.JButton remConsultas;
     private javax.swing.JButton remEnfermeiro;
     private javax.swing.JButton remMedico;
     private javax.swing.JButton remPaciente;
-    private javax.swing.JTextField ruaFieldEnfermeiro;
-    private javax.swing.JLabel ruaLabelEnfermeiro;
-    private javax.swing.JComboBox<String> rxComboBoxEnfermeiro;
-    private javax.swing.JLabel rxLabelEnfermeiro;
-    private javax.swing.JButton salvarBtnEnfermeiro;
-    private javax.swing.JTextField setorFieldEnfermeiro;
-    private javax.swing.JLabel setorLabelEnfermeiro;
-    private javax.swing.JTextField telefoneFieldEnfermeiro;
-    private javax.swing.JLabel telefoneLabelEnfermeiro;
     // End of variables declaration//GEN-END:variables
 }
