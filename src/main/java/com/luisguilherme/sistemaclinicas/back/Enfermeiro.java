@@ -4,7 +4,6 @@
  */
 package com.luisguilherme.sistemaclinicas.back;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -12,8 +11,17 @@ import java.util.Date;
  * @author Guilg
  */
 public class Enfermeiro extends AtendenteHospitalar{
+    private static long countId=0;
     private long idEnfermeiro;
     private boolean treinadoOpRX;
+
+    public static long getcountId() {
+        return countId;
+    }
+
+    public static void setIcountId(long id) {
+        countId = id;
+    }
 
     public long getIdEnfermeiro() {
         return idEnfermeiro;
@@ -22,6 +30,7 @@ public class Enfermeiro extends AtendenteHospitalar{
     public void setIdEnfermeiro(long idEnfermeiro) {
         this.idEnfermeiro = idEnfermeiro;
     }
+    
 
     public boolean isTreinadoOpRX() {
         return treinadoOpRX;
@@ -35,6 +44,7 @@ public class Enfermeiro extends AtendenteHospitalar{
         super(setor, chSemanal, nomeCompleto, dataNascimento, endereco, contato, genero);
         this.idEnfermeiro = idEnfermeiro;
         this.treinadoOpRX = treinadoOpRX;
+        countId+=1;
     }
     
     

@@ -16,53 +16,24 @@ import javax.swing.JPanel;
  *
  * @author souzlui03
  */
-public class editarEnfermeiroPanel extends javax.swing.JPanel {
-
-    private CardLayout cl;
-    private javax.swing.JPanel container;
-    private SistemaClinicas back;
+public class editarEnfermeiroPanel extends CRUD_JPanel {
     
     public editarEnfermeiroPanel(CardLayout cl, JPanel container, SistemaClinicas back) {
+        super(cl, container, back);
         initComponents();
-        setCl(cl);
-        setContainer(container);
-        setBack(back);
         listEnfermeiros();
     }
     
-    public CardLayout getCl() {
-        return cl;
-    }
-
-    public void setCl(CardLayout cl) {
-        this.cl = cl;
-    }
-
-    public JPanel getContainer() {
-        return container;
-    }
-
-    public void setContainer(JPanel container) {
-        this.container = container;
-    }
-    
-    public SistemaClinicas getBack() {
-        return back;
-    }
-
-    public void setBack(SistemaClinicas back) {
-        this.back = back;
-    }
     
     public void listEnfermeiros(){
-        for(Enfermeiro e : back.getEnfermeiros()){
+        for(Enfermeiro e : super.getBack().getEnfermeiros()){
             selectionComboBox.addItem(e.getNomeCompleto());
         }
     }
     
     public void loadInfo(int index){
         
-        Enfermeiro e = back.getEnfermeiros().get(index);
+        Enfermeiro e = super.getBack().getEnfermeiros().get(index);
         Endereco end = e.getEndereco();
         ContatoTelEmail cont = e.getContato();
         
@@ -130,12 +101,13 @@ public class editarEnfermeiroPanel extends javax.swing.JPanel {
                 e,
                 c,
                 Genero.MASCULINO);
-            back.getEnfermeiros().set(index, enf);
+            Enfermeiro.setIcountId(Enfermeiro.getcountId() - 1);
+            super.getBack().getEnfermeiros().set(index, enf);
 
         }
         else{
             Enfermeiro enf = new Enfermeiro(
-                Integer.parseInt(idField.getText()),
+                Long.parseLong(idField.getText()),
                 rxComboBox.getSelectedItem() == "Treinado",
                 setorField.getText(),
                 Integer.parseInt(chField.getText()),
@@ -144,7 +116,8 @@ public class editarEnfermeiroPanel extends javax.swing.JPanel {
                 e,
                 c,
                 Genero.FEMININO);
-            back.getEnfermeiros().set(index, enf);
+            Enfermeiro.setIcountId(Enfermeiro.getcountId() - 1);
+            super.getBack().getEnfermeiros().set(index, enf);
         }
     }
 
@@ -234,6 +207,9 @@ public class editarEnfermeiroPanel extends javax.swing.JPanel {
         setorLabel.setText("Setor");
 
         chLabel.setText("Carga Horaria Semanal");
+
+        idField.setEditable(false);
+        idField.setFocusable(false);
 
         idLabel.setText("Id Enfermeiro");
 
@@ -445,7 +421,7 @@ public class editarEnfermeiroPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        cl.show(container,"mainWindow");
+        super.getCl().show(super.getContainer(),"mainWindow");
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void selectionComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectionComboBoxActionPerformed
@@ -457,7 +433,7 @@ public class editarEnfermeiroPanel extends javax.swing.JPanel {
     private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
         int index = selectionComboBox.getSelectedIndex();
         editarInfo(index);
-        cl.show(container,"mainWindow");
+        super.getCl().show(super.getContainer(),"mainWindow");
     }//GEN-LAST:event_editBtnActionPerformed
 
 

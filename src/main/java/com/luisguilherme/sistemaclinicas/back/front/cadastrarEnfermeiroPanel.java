@@ -19,40 +19,16 @@ import javax.swing.JPanel;
  * @author Guilg
  */
 
-public class cadastrarEnfermeiroPanel extends javax.swing.JPanel {
+public class cadastrarEnfermeiroPanel extends CRUD_JPanel {
 
-    private CardLayout cl;
-    private javax.swing.JPanel container;
-    private SistemaClinicas back;
     public cadastrarEnfermeiroPanel(CardLayout cl, JPanel container, SistemaClinicas back) {
+        super(cl, container, back);
         initComponents();
-        setCl(cl);
-        setContainer(container);
-        setBack(back);
+        loadId();
     }
-
-    public CardLayout getCl() {
-        return cl;
-    }
-
-    public void setCl(CardLayout cl) {
-        this.cl = cl;
-    }
-
-    public JPanel getContainer() {
-        return container;
-    }
-
-    public void setContainer(JPanel container) {
-        this.container = container;
-    }
-
-    public SistemaClinicas getBack() {
-        return back;
-    }
-
-    public void setBack(SistemaClinicas back) {
-        this.back = back;
+    
+    public void loadId(){
+        idField.setText(Long.toString(Enfermeiro.getcountId()+ 1));
     }
     
     
@@ -83,12 +59,12 @@ public class cadastrarEnfermeiroPanel extends javax.swing.JPanel {
                 e,
                 c,
                 Genero.MASCULINO);
-            back.getEnfermeiros().add(enf);
+            super.getBack().getEnfermeiros().add(enf);
 
         }
         else{
             Enfermeiro enf = new Enfermeiro(
-                Integer.parseInt(idField.getText()),
+                Long.parseLong(idField.getText()),
                 rxComboBox.getSelectedItem() == "Treinado",
                 setorField.getText(),
                 Integer.parseInt(chField.getText()),
@@ -97,7 +73,7 @@ public class cadastrarEnfermeiroPanel extends javax.swing.JPanel {
                 e,
                 c,
                 Genero.FEMININO);
-            back.getEnfermeiros().add(enf);
+            super.getBack().getEnfermeiros().add(enf);
         }
     }
     
@@ -185,6 +161,9 @@ public class cadastrarEnfermeiroPanel extends javax.swing.JPanel {
         setorLabel.setText("Setor");
 
         chLabel.setText("Carga Horaria Semanal");
+
+        idField.setEditable(false);
+        idField.setFocusable(false);
 
         idLabel.setText("Id Enfermeiro");
 
@@ -391,13 +370,13 @@ public class cadastrarEnfermeiroPanel extends javax.swing.JPanel {
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         
-        cl.show(container,"mainWindow");
+        super.getCl().show(super.getContainer(),"mainWindow");
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void salvarBtnEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarBtnEnfermeiroActionPerformed
 
         cadastrar();
-        cl.show(container,"mainWindow");
+        super.getCl().show(super.getContainer(),"mainWindow");
     }//GEN-LAST:event_salvarBtnEnfermeiroActionPerformed
 
 

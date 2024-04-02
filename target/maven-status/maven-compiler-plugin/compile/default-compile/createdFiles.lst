@@ -6,11 +6,13 @@ com\luisguilherme\sistemaclinicas\back\Medico.class
 com\luisguilherme\sistemaclinicas\back\front\consultarEnfermeiroPanel$1.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$3.class
 com\luisguilherme\sistemaclinicas\back\Enfermeiro.class
+com\luisguilherme\sistemaclinicas\back\front\deletarEnfermeiro$3.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$12.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$16.class
 com\luisguilherme\sistemaclinicas\back\DadoPessoal.class
 com\luisguilherme\sistemaclinicas\back\front\consultarEnfermeiroPanel$2.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$8.class
+com\luisguilherme\sistemaclinicas\back\front\deletarEnfermeiro$2.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$11.class
 com\luisguilherme\sistemaclinicas\back\Genero.class
 com\luisguilherme\sistemaclinicas\back\front\editarEnfermeiroPanel$1.class
@@ -21,6 +23,7 @@ com\luisguilherme\sistemaclinicas\back\front\GUI$1.class
 com\luisguilherme\sistemaclinicas\back\SistemaClinicas.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$6.class
 com\luisguilherme\sistemaclinicas\back\Endereco.class
+com\luisguilherme\sistemaclinicas\back\front\CRUD_JPanel.class
 com\luisguilherme\sistemaclinicas\back\AtendenteHospitalar.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$13.class
 com\luisguilherme\sistemaclinicas\back\front\editarEnfermeiroPanel$3.class
@@ -33,7 +36,9 @@ com\luisguilherme\sistemaclinicas\back\front\cadastrarEnfermeiroPanel$1.class
 com\luisguilherme\sistemaclinicas\back\Responsavel.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$2.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$10.class
+com\luisguilherme\sistemaclinicas\back\front\deletarEnfermeiro$1.class
 com\luisguilherme\sistemaclinicas\back\ConsultaMedica.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$7.class
+com\luisguilherme\sistemaclinicas\back\front\deletarEnfermeiro.class
 com\luisguilherme\sistemaclinicas\back\ContatoTelEmail.class
 com\luisguilherme\sistemaclinicas\back\front\editarEnfermeiroPanel$2.class

@@ -20,7 +20,7 @@
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="editarEnfermeiro" min="-2" max="-2" attributes="0"/>
+                  <Component id="deletarEnfermeiro" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -29,13 +29,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <EmptySpace min="0" pref="559" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Component id="editarEnfermeiro" alignment="0" max="32767" attributes="0"/>
+              <Component id="deletarEnfermeiro" alignment="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="editarEnfermeiro">
+    <Container class="javax.swing.JPanel" name="deletarEnfermeiro">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -44,14 +44,6 @@
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="backBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="selectionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="selectionComboBox" alignment="0" min="-2" pref="331" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
@@ -117,11 +109,19 @@
                               <Component id="emailField" alignment="0" max="32767" attributes="0"/>
                               <Component id="generoComboBox" alignment="1" pref="170" max="32767" attributes="0"/>
                               <Component id="generoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="editBtn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="deletarBtn" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="selectionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="selectionComboBox" alignment="0" min="-2" pref="331" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -202,45 +202,42 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="infoEspecificasLabel" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="setorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="idLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="idField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="setorField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="chLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rxLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rxComboBox" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="chField" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                      </Group>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="setorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="idLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="editBtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="idField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="setorField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="chLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rxLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="rxComboBox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="chField" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  <Component id="deletarBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="nomeField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="nomeLabel">
           <Properties>
@@ -258,6 +255,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="ruaField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="numeroLabel">
           <Properties>
@@ -265,6 +266,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="numeroField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="bairroLabel">
           <Properties>
@@ -272,6 +277,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="estadoField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="estadoLabel">
           <Properties>
@@ -279,6 +288,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cidadeField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cidadeLabel">
           <Properties>
@@ -286,10 +299,21 @@
           </Properties>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="nascimentoField">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="bairroField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="CEPField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="CEPLabel">
           <Properties>
@@ -297,6 +321,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="telefoneField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="telefoneLabel">
           <Properties>
@@ -304,6 +332,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="celularField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="celularLabel">
           <Properties>
@@ -316,6 +348,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="emailField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="generoLabel">
           <Properties>
@@ -331,6 +367,7 @@
               </StringArray>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="enabled" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <AuxValues>
@@ -355,8 +392,16 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="setorField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="chField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="chLabel">
           <Properties>
@@ -387,6 +432,7 @@
                 <StringItem index="1" value="N&#xe3;o Treinado"/>
               </StringArray>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <AuxValues>
@@ -419,12 +465,12 @@
             <Property name="text" type="java.lang.String" value="Enfermeiro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="editBtn">
+        <Component class="javax.swing.JButton" name="deletarBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Editar"/>
+            <Property name="text" type="java.lang.String" value="Deletar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletarBtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

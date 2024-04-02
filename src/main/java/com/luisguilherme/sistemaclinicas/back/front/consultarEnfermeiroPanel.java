@@ -17,53 +17,23 @@ import javax.swing.JPanel;
  *
  * @author Guilg
  */
-public class consultarEnfermeiroPanel extends javax.swing.JPanel {
-
-    private CardLayout cl;
-    private javax.swing.JPanel container;
-    private SistemaClinicas back;
-    
+public class consultarEnfermeiroPanel extends CRUD_JPanel {
     
     public consultarEnfermeiroPanel(CardLayout cl, JPanel container, SistemaClinicas back) {
+        super(cl, container, back);
         initComponents();
-        setCl(cl);
-        setContainer(container);
-        setBack(back);
         listEnfermeiros();
-    }
-    public CardLayout getCl() {
-        return cl;
-    }
-
-    public void setCl(CardLayout cl) {
-        this.cl = cl;
-    }
-
-    public JPanel getContainer() {
-        return container;
-    }
-
-    public void setContainer(JPanel container) {
-        this.container = container;
-    }
-    
-    public SistemaClinicas getBack() {
-        return back;
-    }
-
-    public void setBack(SistemaClinicas back) {
-        this.back = back;
     }
     
     public void listEnfermeiros(){
-        for(Enfermeiro e : back.getEnfermeiros()){
+        for(Enfermeiro e : super.getBack().getEnfermeiros()){
             selectionComboBox.addItem(e.getNomeCompleto());
         }
     }
     
     public void loadInfo(int index){
         
-        Enfermeiro e = back.getEnfermeiros().get(index);
+        Enfermeiro e = super.getBack().getEnfermeiros().get(index);
         Endereco end = e.getEndereco();
         ContatoTelEmail cont = e.getContato();
         
@@ -112,7 +82,7 @@ public class consultarEnfermeiroPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cadastrarEnfermeiro = new javax.swing.JPanel();
+        consultarEnfermeiro = new javax.swing.JPanel();
         nomeField = new javax.swing.JTextField();
         nomeLabel = new javax.swing.JLabel();
         nascimentoLabel = new javax.swing.JLabel();
@@ -254,24 +224,24 @@ public class consultarEnfermeiroPanel extends javax.swing.JPanel {
 
         selectionLabel.setText("Enfermeiro");
 
-        javax.swing.GroupLayout cadastrarEnfermeiroLayout = new javax.swing.GroupLayout(cadastrarEnfermeiro);
-        cadastrarEnfermeiro.setLayout(cadastrarEnfermeiroLayout);
-        cadastrarEnfermeiroLayout.setHorizontalGroup(
-            cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarEnfermeiroLayout.createSequentialGroup()
+        javax.swing.GroupLayout consultarEnfermeiroLayout = new javax.swing.GroupLayout(consultarEnfermeiro);
+        consultarEnfermeiro.setLayout(consultarEnfermeiroLayout);
+        consultarEnfermeiroLayout.setHorizontalGroup(
+            consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarEnfermeiroLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(backBtn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarEnfermeiroLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarEnfermeiroLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(selectionLabel)
                     .addComponent(selectionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(231, 231, 231))
-            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
+            .addGroup(consultarEnfermeiroLayout.createSequentialGroup()
                 .addGap(92, 92, 92)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(numeroLabel, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(ruaLabel, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(nascimentoLabel, javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,36 +255,36 @@ public class consultarEnfermeiroPanel extends javax.swing.JPanel {
                     .addComponent(chLabel)
                     .addComponent(chField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(59, 59, 59)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
+                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(consultarEnfermeiroLayout.createSequentialGroup()
                         .addComponent(infoEspecificasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(consultarEnfermeiroLayout.createSequentialGroup()
+                        .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(consultarEnfermeiroLayout.createSequentialGroup()
+                                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(idLabel)
                                     .addComponent(rxLabel)
-                                    .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(idField, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(rxComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 170, Short.MAX_VALUE))
                                     .addComponent(CEPLabel)
                                     .addComponent(estadoLabel)
                                     .addComponent(cidadeLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarEnfermeiroLayout.createSequentialGroup()
-                                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarEnfermeiroLayout.createSequentialGroup()
+                                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(cidadeField, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(estadoField, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(CEPField, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(infoGeraisLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                                     .addComponent(bairroField, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cadastrarEnfermeiroLayout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, consultarEnfermeiroLayout.createSequentialGroup()
                                         .addComponent(bairroLabel)
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGap(68, 68, 68)))
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(telefoneLabel)
                                 .addComponent(telefoneField)
                                 .addComponent(celularLabel)
@@ -325,9 +295,9 @@ public class consultarEnfermeiroPanel extends javax.swing.JPanel {
                             .addComponent(generoLabel))
                         .addGap(86, 86, 86))))
         );
-        cadastrarEnfermeiroLayout.setVerticalGroup(
-            cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
+        consultarEnfermeiroLayout.setVerticalGroup(
+            consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(consultarEnfermeiroLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(backBtn)
                 .addGap(32, 32, 32)
@@ -335,18 +305,18 @@ public class consultarEnfermeiroPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(selectionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
+                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(consultarEnfermeiroLayout.createSequentialGroup()
                         .addComponent(infoGeraisLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarEnfermeiroLayout.createSequentialGroup()
-                                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
+                        .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarEnfermeiroLayout.createSequentialGroup()
+                                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(consultarEnfermeiroLayout.createSequentialGroup()
                                         .addComponent(telefoneLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(telefoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
+                                    .addGroup(consultarEnfermeiroLayout.createSequentialGroup()
                                         .addComponent(bairroLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(bairroField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -354,11 +324,11 @@ public class consultarEnfermeiroPanel extends javax.swing.JPanel {
                                 .addComponent(estadoLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(estadoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarEnfermeiroLayout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarEnfermeiroLayout.createSequentialGroup()
                                 .addComponent(celularLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(celularField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
+                    .addGroup(consultarEnfermeiroLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(nomeLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -368,39 +338,39 @@ public class consultarEnfermeiroPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nascimentoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ruaLabel)
                     .addComponent(cidadeLabel)
                     .addComponent(emailLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ruaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cidadeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numeroLabel)
                     .addComponent(CEPLabel)
                     .addComponent(generoLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numeroField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CEPField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(generoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(infoEspecificasLabel)
                 .addGap(9, 9, 9)
-                .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(cadastrarEnfermeiroLayout.createSequentialGroup()
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(consultarEnfermeiroLayout.createSequentialGroup()
+                        .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(setorLabel)
                             .addComponent(idLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(setorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(cadastrarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(consultarEnfermeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(chLabel)
                             .addComponent(rxLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -418,18 +388,18 @@ public class consultarEnfermeiroPanel extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(cadastrarEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(consultarEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(cadastrarEnfermeiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(consultarEnfermeiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        cl.show(container,"mainWindow");
+        super.getCl().show(super.getContainer(),"mainWindow");
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void selectionComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectionComboBoxActionPerformed
@@ -445,13 +415,13 @@ public class consultarEnfermeiroPanel extends javax.swing.JPanel {
     private javax.swing.JButton backBtn;
     private javax.swing.JTextField bairroField;
     private javax.swing.JLabel bairroLabel;
-    private javax.swing.JPanel cadastrarEnfermeiro;
     private javax.swing.JTextField celularField;
     private javax.swing.JLabel celularLabel;
     private javax.swing.JTextField chField;
     private javax.swing.JLabel chLabel;
     private javax.swing.JTextField cidadeField;
     private javax.swing.JLabel cidadeLabel;
+    private javax.swing.JPanel consultarEnfermeiro;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField estadoField;

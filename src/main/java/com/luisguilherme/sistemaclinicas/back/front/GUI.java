@@ -10,8 +10,6 @@ package com.luisguilherme.sistemaclinicas.back.front;
  */
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
-import java.time.ZoneId;
-import java.util.ArrayList;
 public class GUI extends javax.swing.JFrame {
 
     private CardLayout cl;
@@ -370,7 +368,9 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_editEnfermeiroActionPerformed
 
     private void remEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remEnfermeiroActionPerformed
-        // TODO add your handling code here:
+        deletarEnfermeiro panel = new deletarEnfermeiro(cl, container, back);
+        container.add(panel, "deletaEnfermeiro");
+        cl.show(container, "deletaEnfermeiro");
     }//GEN-LAST:event_remEnfermeiroActionPerformed
 
     private void cadConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadConsultasActionPerformed
