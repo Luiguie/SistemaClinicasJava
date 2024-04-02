@@ -5,6 +5,7 @@
 package com.luisguilherme.sistemaclinicas.back;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -29,7 +30,7 @@ public class AtendenteHospitalar extends DadoPessoal{
         this.chSemanal = chSemanal;
     }
 
-    public AtendenteHospitalar(String setor, int chSemanal, String nomeCompleto, LocalDate dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+    public AtendenteHospitalar(String setor, int chSemanal, String nomeCompleto, Date dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
         super(nomeCompleto, dataNascimento, endereco, contato, genero);
         this.setor = setor;
         this.chSemanal = chSemanal;

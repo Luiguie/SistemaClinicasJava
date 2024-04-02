@@ -51,39 +51,39 @@
                           <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="numeroLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ruaLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nascimentoLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nomeLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ruaFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="numeroFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="nascimentoFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="nomeFieldEnfermeiro" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                                  <Component id="numeroLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ruaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nascimentoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nomeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ruaField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="numeroField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="nascimentoField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="nomeField" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="setorLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="setorFieldEnfermeiro" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
-                              <Component id="chLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="chFieldEnfermeiro" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="setorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="setorField" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="chLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chField" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="backBtnEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="backBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="idLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="idFieldEnfermeiro" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="idLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="idField" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rxLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="rxComboBoxEnfermeiro" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="rxLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rxComboBox" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -91,30 +91,30 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="infoEspecificasLabel" alignment="0" pref="170" max="32767" attributes="0"/>
                               <Component id="infoGeraisLabel" alignment="0" max="32767" attributes="0"/>
-                              <Component id="bairroFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
-                              <Component id="estadoFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
-                              <Component id="cidadeFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bairroField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="estadoField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="cidadeField" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="CEPLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cidadeLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="estadoLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="bairroLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CEPLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cidadeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="estadoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bairroLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="CEPFieldlEnfermeiro" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CEPFieldl" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="telefoneLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="telefoneFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
-                              <Component id="celularLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="celularFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
-                              <Component id="emailLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="emailFieldEnfermeiro" alignment="0" max="32767" attributes="0"/>
-                              <Component id="generoLabelEnfermeiro" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="generoComboBoxEnfermeiro" alignment="1" pref="170" max="32767" attributes="0"/>
+                              <Component id="telefoneLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="telefoneField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="celularLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="celularField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="emailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="emailField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="generoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="generoComboBox" alignment="1" pref="170" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                       </Group>
@@ -137,75 +137,75 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="backBtnEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="backBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="bairroLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="bairroLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="bairroFieldEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="bairroField" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Component id="estadoLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="estadoLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="estadoFieldEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="estadoField" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cidadeLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="cidadeLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cidadeFieldEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="cidadeField" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="CEPLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="CEPLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="CEPFieldlEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="CEPFieldl" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="nomeLabelEnfermeiro" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="telefoneLabelEnfermeiro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nomeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="telefoneLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="nomeFieldEnfermeiro" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="telefoneFieldEnfermeiro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nomeField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="telefoneField" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="nascimentoLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nascimentoLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="nascimentoFieldEnfermeiro" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nascimentoField" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="celularLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                                  <Component id="celularLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="celularFieldEnfermeiro" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="ruaLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ruaFieldEnfermeiro" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="emailLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="emailFieldEnfermeiro" min="-2" max="-2" attributes="0"/>
+                                  <Component id="celularField" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="numeroLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ruaLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="numeroFieldEnfermeiro" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ruaField" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="generoLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emailLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="generoComboBoxEnfermeiro" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emailField" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="numeroLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="numeroField" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="generoLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="generoComboBox" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -215,27 +215,27 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="setorLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="setorLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="setorFieldEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="setorField" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="idLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="idLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="idFieldEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="idField" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="chLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="chLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="chFieldEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="chField" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="rxLabelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="rxLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rxComboBoxEnfermeiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="rxComboBox" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="76" max="32767" attributes="0"/>
@@ -246,89 +246,89 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="nomeFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="nomeField">
         </Component>
-        <Component class="javax.swing.JLabel" name="nomeLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="nomeLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nome"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="nascimentoLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="nascimentoLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Data de Nascimento"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="ruaLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="ruaLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Rua"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="ruaFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="ruaField">
         </Component>
-        <Component class="javax.swing.JLabel" name="numeroLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="numeroLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Numero"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="numeroFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="numeroField">
         </Component>
-        <Component class="javax.swing.JLabel" name="bairroLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="bairroLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Bairro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="estadoFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="estadoField">
         </Component>
-        <Component class="javax.swing.JLabel" name="estadoLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="estadoLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Estado"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="cidadeFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="cidadeField">
         </Component>
-        <Component class="javax.swing.JLabel" name="cidadeLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="cidadeLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cidade"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="nascimentoFieldEnfermeiro">
+        <Component class="com.toedter.calendar.JDateChooser" name="nascimentoField">
         </Component>
-        <Component class="javax.swing.JTextField" name="bairroFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="bairroField">
         </Component>
-        <Component class="javax.swing.JTextField" name="CEPFieldlEnfermeiro">
+        <Component class="javax.swing.JTextField" name="CEPFieldl">
         </Component>
-        <Component class="javax.swing.JLabel" name="CEPLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="CEPLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="CEP"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="telefoneFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="telefoneField">
         </Component>
-        <Component class="javax.swing.JLabel" name="telefoneLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="telefoneLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Telefone"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="celularFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="celularField">
         </Component>
-        <Component class="javax.swing.JLabel" name="celularLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="celularLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Celular"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="emailLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="emailLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Email"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="emailFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="emailField">
         </Component>
-        <Component class="javax.swing.JLabel" name="generoLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="generoLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Genero"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="generoComboBoxEnfermeiro">
+        <Component class="javax.swing.JComboBox" name="generoComboBox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -354,33 +354,33 @@
             <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es Especificas"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="setorLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="setorLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Setor"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="setorFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="setorField">
         </Component>
-        <Component class="javax.swing.JTextField" name="chFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="chField">
         </Component>
-        <Component class="javax.swing.JLabel" name="chLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="chLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Carga Horaria Semanal"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="idFieldEnfermeiro">
+        <Component class="javax.swing.JTextField" name="idField">
         </Component>
-        <Component class="javax.swing.JLabel" name="idLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="idLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Id Enfermeiro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rxLabelEnfermeiro">
+        <Component class="javax.swing.JLabel" name="rxLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Treinado em Raio X?"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="rxComboBoxEnfermeiro">
+        <Component class="javax.swing.JComboBox" name="rxComboBox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -393,12 +393,12 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="backBtnEnfermeiro">
+        <Component class="javax.swing.JButton" name="backBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt;----"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBtnEnfermeiroActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBtnActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="salvarBtnEnfermeiro">

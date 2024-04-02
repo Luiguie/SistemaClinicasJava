@@ -5,6 +5,7 @@
 package com.luisguilherme.sistemaclinicas.back;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -30,7 +31,7 @@ public class Enfermeiro extends AtendenteHospitalar{
         this.treinadoOpRX = treinadoOpRX;
     }
 
-    public Enfermeiro(long idEnfermeiro, boolean treinadoOpRX, String setor, int chSemanal, String nomeCompleto, LocalDate dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+    public Enfermeiro(long idEnfermeiro, boolean treinadoOpRX, String setor, int chSemanal, String nomeCompleto, Date dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
         super(setor, chSemanal, nomeCompleto, dataNascimento, endereco, contato, genero);
         this.idEnfermeiro = idEnfermeiro;
         this.treinadoOpRX = treinadoOpRX;

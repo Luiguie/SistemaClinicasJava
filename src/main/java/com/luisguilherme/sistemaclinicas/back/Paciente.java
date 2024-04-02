@@ -11,6 +11,7 @@ import java.time.LocalDate;
  * @author Guilg
  */
 import java.util.ArrayList;
+import java.util.Date;
 public class Paciente extends DadoPessoal{
     private long idPaciente;
     private int idade;
@@ -67,7 +68,7 @@ public class Paciente extends DadoPessoal{
         this.contatoResponsavel = contatoResponsavel;
     }
 
-    public Paciente(long idPaciente, int idade, LocalDate dataCadastro, String obsGeral, String nomeCompleto, LocalDate dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+    public Paciente(long idPaciente, int idade, LocalDate dataCadastro, String obsGeral, String nomeCompleto, Date dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
         super(nomeCompleto, dataNascimento, endereco, contato, genero);
         this.idPaciente = idPaciente;
         this.idade = idade;

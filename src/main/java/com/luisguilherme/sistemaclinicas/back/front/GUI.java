@@ -8,17 +8,14 @@ package com.luisguilherme.sistemaclinicas.back.front;
  *
  * @author Guilg
  */
-import com.luisguilherme.sistemaclinicas.back.ContatoTelEmail;
-import com.luisguilherme.sistemaclinicas.back.Endereco;
-import com.luisguilherme.sistemaclinicas.back.Enfermeiro;
-import com.luisguilherme.sistemaclinicas.back.Genero;
+import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
 import java.time.ZoneId;
 import java.util.ArrayList;
 public class GUI extends javax.swing.JFrame {
 
     private CardLayout cl;
-    private ArrayList<Enfermeiro> enfermeiros = new ArrayList<Enfermeiro>();
+    private SistemaClinicas back = new SistemaClinicas();
     
     public GUI() {
         initComponents();
@@ -355,19 +352,21 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_remMedicoActionPerformed
 
     private void cadEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadEnfermeiroActionPerformed
-        cadastrarEnfermeiroPanel panel = new cadastrarEnfermeiroPanel(cl, container);
+        cadastrarEnfermeiroPanel panel = new cadastrarEnfermeiroPanel(cl, container, back);
         container.add(panel, "cadastraEnfermeiro");
         cl.show(container, "cadastraEnfermeiro");
     }//GEN-LAST:event_cadEnfermeiroActionPerformed
 
     private void consEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consEnfermeiroActionPerformed
-        consultarEnfermeiroPanel panel = new consultarEnfermeiroPanel(cl, container);
+        consultarEnfermeiroPanel panel = new consultarEnfermeiroPanel(cl, container, back);
         container.add(panel, "consultaEnfermeiro");
         cl.show(container, "consultaEnfermeiro");
     }//GEN-LAST:event_consEnfermeiroActionPerformed
 
     private void editEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEnfermeiroActionPerformed
-        // TODO add your handling code here:
+        editarEnfermeiroPanel panel = new editarEnfermeiroPanel(cl, container, back);
+        container.add(panel, "editaEnfermeiro");
+        cl.show(container, "editaEnfermeiro");
     }//GEN-LAST:event_editEnfermeiroActionPerformed
 
     private void remEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remEnfermeiroActionPerformed

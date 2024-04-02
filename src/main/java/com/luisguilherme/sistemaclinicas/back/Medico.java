@@ -10,6 +10,7 @@ package com.luisguilherme.sistemaclinicas.back;
  */
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 public class Medico extends AtendenteHospitalar{
     private long idMedico;
     private int numeroCRM;
@@ -48,7 +49,7 @@ public class Medico extends AtendenteHospitalar{
         this.cirurgiao = cirurgiao;
     }
 
-    public Medico(long idMedico, int numeroCRM, boolean cirurgiao, String setor, int chSemanal, String nomeCompleto, LocalDate dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+    public Medico(long idMedico, int numeroCRM, boolean cirurgiao, String setor, int chSemanal, String nomeCompleto, Date dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
         super(setor, chSemanal, nomeCompleto, dataNascimento, endereco, contato, genero);
         this.idMedico = idMedico;
         this.numeroCRM = numeroCRM;

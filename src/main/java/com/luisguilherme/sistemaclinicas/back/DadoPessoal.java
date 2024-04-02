@@ -10,10 +10,11 @@ package com.luisguilherme.sistemaclinicas.back;
  */
 
 import java.time.LocalDate;
+import java.util.Date;
 public class DadoPessoal {
     
     private String nomeCompleto;
-    private LocalDate dataNascimento;
+    private Date dataNascimento;
     private Endereco endereco;
     private ContatoTelEmail contato;
     private Genero genero;
@@ -26,11 +27,11 @@ public class DadoPessoal {
         this.nomeCompleto = nomeCompleto;
     }
 
-    public LocalDate getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -58,7 +59,7 @@ public class DadoPessoal {
         this.genero = genero;
     }
 
-    public DadoPessoal(String nomeCompleto, LocalDate dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+    public DadoPessoal(String nomeCompleto, Date dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
         this.endereco = endereco;
