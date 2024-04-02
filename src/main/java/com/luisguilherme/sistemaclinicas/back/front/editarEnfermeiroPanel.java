@@ -10,6 +10,7 @@ import com.luisguilherme.sistemaclinicas.back.Enfermeiro;
 import com.luisguilherme.sistemaclinicas.back.Genero;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -26,14 +27,15 @@ public class editarEnfermeiroPanel extends CRUD_JPanel {
     
     
     public void listEnfermeiros(){
-        for(Enfermeiro e : super.getBack().getEnfermeiros()){
+        //carrega opções no comboBox
+        for(Enfermeiro e : getBack().getEnfermeiros()){
             selectionComboBox.addItem(e.getNomeCompleto());
         }
     }
     
     public void loadInfo(int index){
         
-        Enfermeiro e = super.getBack().getEnfermeiros().get(index);
+        Enfermeiro e = getBack().getEnfermeiros().get(index);
         Endereco end = e.getEndereco();
         ContatoTelEmail cont = e.getContato();
         
@@ -73,7 +75,45 @@ public class editarEnfermeiroPanel extends CRUD_JPanel {
             
     }
     
-    public void editarInfo(int index){
+    public boolean validar(){
+        //valida todos os campos presentes no Jpanel e retorna falso caso algum
+        //esteja invalido
+        if(!validarCampo(ruaField))
+            return false;
+        if(!validarNum(numeroField))
+            return false;
+        if(!validarCampo(bairroField))
+            return false;
+        if(!validarCampo(cidadeField))
+            return false;
+        if(!validarCampo(estadoField))
+            return false;
+        if(!validarNum(CEPField))
+            return false;
+        if(!validarCampo(telefoneField))
+            return false;
+        if(!validarCampo(celularField))
+            return false;
+        if(!validarEmail(emailField))
+            return false;
+        if(!validarCampo(setorField))
+            return false;
+        if(!validarNum(chField))
+            return false;
+        //if(!validarData(nascimentoField))
+        //    return false;
+        if(!validarCampo(nomeField))
+            return false;
+        
+       return true;
+    }
+    
+    public boolean editarInfo(int index){
+        //valida campos
+        if(!validar()){
+            JOptionPane.showMessageDialog(null, "Campo(s) Invalido(s)");
+            return false;
+        }
         
         //populo objeto endereço
         Endereco e = new Endereco(
@@ -102,7 +142,7 @@ public class editarEnfermeiroPanel extends CRUD_JPanel {
                 c,
                 Genero.MASCULINO);
             Enfermeiro.setIcountId(Enfermeiro.getcountId() - 1);
-            super.getBack().getEnfermeiros().set(index, enf);
+            getBack().getEnfermeiros().set(index, enf);
 
         }
         else{
@@ -117,8 +157,9 @@ public class editarEnfermeiroPanel extends CRUD_JPanel {
                 c,
                 Genero.FEMININO);
             Enfermeiro.setIcountId(Enfermeiro.getcountId() - 1);
-            super.getBack().getEnfermeiros().set(index, enf);
+            getBack().getEnfermeiros().set(index, enf);
         }
+        return true;
     }
 
     /**
@@ -421,7 +462,7 @@ public class editarEnfermeiroPanel extends CRUD_JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        super.getCl().show(super.getContainer(),"mainWindow");
+        getCl().show(getContainer(),"mainWindow");
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void selectionComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectionComboBoxActionPerformed
@@ -432,8 +473,10 @@ public class editarEnfermeiroPanel extends CRUD_JPanel {
 
     private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
         int index = selectionComboBox.getSelectedIndex();
-        editarInfo(index);
-        super.getCl().show(super.getContainer(),"mainWindow");
+        if(editarInfo(index)){
+            getCl().show(getContainer(),"mainWindow");
+        }
+        
     }//GEN-LAST:event_editBtnActionPerformed
 
 

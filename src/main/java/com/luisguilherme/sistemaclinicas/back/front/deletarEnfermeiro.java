@@ -29,7 +29,7 @@ public class deletarEnfermeiro extends CRUD_JPanel {
     
     public void loadInfo(int index){
         
-        Enfermeiro e = super.getBack().getEnfermeiros().get(index);
+        Enfermeiro e = getBack().getEnfermeiros().get(index);
         Endereco end = e.getEndereco();
         ContatoTelEmail cont = e.getContato();
         
@@ -70,7 +70,8 @@ public class deletarEnfermeiro extends CRUD_JPanel {
     }
     
     public void listEnfermeiros(){
-        for(Enfermeiro e : super.getBack().getEnfermeiros()){
+        //carrega opções no comboBox
+        for(Enfermeiro e : getBack().getEnfermeiros()){
             selectionComboBox.addItem(e.getNomeCompleto());
         }
     }
@@ -410,7 +411,7 @@ public class deletarEnfermeiro extends CRUD_JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        super.getCl().show(super.getContainer(),"mainWindow");
+        getCl().show(getContainer(),"mainWindow");
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void selectionComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectionComboBoxActionPerformed
@@ -420,9 +421,10 @@ public class deletarEnfermeiro extends CRUD_JPanel {
     }//GEN-LAST:event_selectionComboBoxActionPerformed
 
     private void deletarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarBtnActionPerformed
+        //deleta e volta para a mainWindow
         int index = selectionComboBox.getSelectedIndex();
-        super.getBack().getEnfermeiros().remove(index);
-        super.getCl().show(super.getContainer(),"mainWindow");
+        getBack().getEnfermeiros().remove(index);
+        getCl().show(getContainer(),"mainWindow");
     }//GEN-LAST:event_deletarBtnActionPerformed
 
 

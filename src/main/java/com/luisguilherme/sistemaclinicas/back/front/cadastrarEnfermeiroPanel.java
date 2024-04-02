@@ -11,6 +11,7 @@ import com.luisguilherme.sistemaclinicas.back.Genero;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
 import java.time.ZoneId;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
@@ -28,11 +29,50 @@ public class cadastrarEnfermeiroPanel extends CRUD_JPanel {
     }
     
     public void loadId(){
+        //carrega o proximo id no campo bloqueado
         idField.setText(Long.toString(Enfermeiro.getcountId()+ 1));
     }
     
+    public boolean validar(){
+        //valida todos os campos presentes no Jpanel e retorna falso caso algum
+        //esteja invalido
+        if(!validarCampo(ruaField))
+            return false;
+        if(!validarNum(numeroField))
+            return false;
+        if(!validarCampo(bairroField))
+            return false;
+        if(!validarCampo(cidadeField))
+            return false;
+        if(!validarCampo(estadoField))
+            return false;
+        if(!validarNum(CEPFieldl))
+            return false;
+        if(!validarCampo(telefoneField))
+            return false;
+        if(!validarCampo(celularField))
+            return false;
+        if(!validarEmail(emailField))
+            return false;
+        if(!validarCampo(setorField))
+            return false;
+        if(!validarNum(chField))
+            return false;
+        //if(!validarData(nascimentoField))
+        //    return false;
+        if(!validarCampo(nomeField))
+            return false;
+        
+       return true;
+    }
     
-    public void cadastrar(){
+    public boolean cadastrar(){
+        if(!validar()){
+            JOptionPane.showMessageDialog(null, "Campo(s) Invalido(s)");
+            return false;
+        }
+            
+        
         //populo objeto endereço
         Endereco e = new Endereco(
             ruaField.getText(),
@@ -59,7 +99,7 @@ public class cadastrarEnfermeiroPanel extends CRUD_JPanel {
                 e,
                 c,
                 Genero.MASCULINO);
-            super.getBack().getEnfermeiros().add(enf);
+            getBack().getEnfermeiros().add(enf);
 
         }
         else{
@@ -73,8 +113,9 @@ public class cadastrarEnfermeiroPanel extends CRUD_JPanel {
                 e,
                 c,
                 Genero.FEMININO);
-            super.getBack().getEnfermeiros().add(enf);
+            getBack().getEnfermeiros().add(enf);
         }
+        return true;
     }
     
 
@@ -370,13 +411,15 @@ public class cadastrarEnfermeiroPanel extends CRUD_JPanel {
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         
-        super.getCl().show(super.getContainer(),"mainWindow");
+        getCl().show(getContainer(),"mainWindow");
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void salvarBtnEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarBtnEnfermeiroActionPerformed
 
-        cadastrar();
-        super.getCl().show(super.getContainer(),"mainWindow");
+        if(cadastrar()){
+            getCl().show(getContainer(),"mainWindow");
+        }
+        
     }//GEN-LAST:event_salvarBtnEnfermeiroActionPerformed
 
 

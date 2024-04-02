@@ -5,8 +5,11 @@
 package com.luisguilherme.sistemaclinicas.back.front;
 
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
+import com.toedter.calendar.JDateChooser;
 import java.awt.CardLayout;
+import java.util.Date;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -40,7 +43,48 @@ public class CRUD_JPanel extends javax.swing.JPanel{
     public void setBack(SistemaClinicas back) {
         this.back = back;
     }
-
+    
+    public boolean validarCampo(JTextField f){
+        //checa se o campo está vazio e retorna false caso esteja
+        return !f.getText().equals("");
+        
+    }
+    public boolean validarNum(JTextField f){
+        if(!validarCampo(f)){
+            return false;
+        }
+        try{
+            //checa se o numero é um inteiro positivo;
+            int n = Integer.parseInt(f.getText());
+            
+            return n>=0;
+        }
+        catch(Exception e){
+            return false;
+        }
+        
+    }
+    public boolean validarEmail(JTextField f){
+        if(!validarCampo(f)){
+            return false;
+        }
+        return f.getText().contains("@");
+    }
+    
+    public boolean validarData(JDateChooser dc){
+        
+       
+        try{
+            System.out.println("aa" + dc.getDate());
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
+            
+        
+    }
+    
     public CRUD_JPanel(CardLayout cl, JPanel container, SistemaClinicas back) {
         this.cl = cl;
         this.container = container;
