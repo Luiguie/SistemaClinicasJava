@@ -102,7 +102,8 @@ public class cadastrarMedico extends CRUD_JPanel {
                 nascimentoField.getDate(),
                 e,
                 c,
-                Genero.MASCULINO);
+                Genero.MASCULINO,
+                especialidadesField.getText());
             getBack().getMedicos().add(med);
 
         }
@@ -117,7 +118,8 @@ public class cadastrarMedico extends CRUD_JPanel {
                 nascimentoField.getDate(),
                 e,
                 c,
-                Genero.FEMININO);
+                Genero.FEMININO,
+                especialidadesField.getText());
             getBack().getMedicos().add(med);
         }
         return true;
@@ -165,13 +167,13 @@ public class cadastrarMedico extends CRUD_JPanel {
         chLabel = new javax.swing.JLabel();
         idField = new javax.swing.JTextField();
         idLabel = new javax.swing.JLabel();
-        rxLabel = new javax.swing.JLabel();
+        cirurgiaoLabel = new javax.swing.JLabel();
         cirurgiaoComboBox = new javax.swing.JComboBox<>();
         backBtn = new javax.swing.JButton();
         salvarBtn = new javax.swing.JButton();
         crmField = new javax.swing.JTextField();
         crmLabel = new javax.swing.JLabel();
-        crmLabel1 = new javax.swing.JLabel();
+        especialidadesLabel = new javax.swing.JLabel();
         especialidadesField = new javax.swing.JTextField();
 
         nomeLabel.setText("Nome");
@@ -216,7 +218,7 @@ public class cadastrarMedico extends CRUD_JPanel {
 
         idLabel.setText("Id Medico");
 
-        rxLabel.setText("Cirurgião?");
+        cirurgiaoLabel.setText("Cirurgião?");
 
         cirurgiaoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
 
@@ -236,7 +238,7 @@ public class cadastrarMedico extends CRUD_JPanel {
 
         crmLabel.setText("CRM");
 
-        crmLabel1.setText("Especialidades (Separar por Virgula)");
+        especialidadesLabel.setText("Especialidades (Separar por Virgula)");
 
         javax.swing.GroupLayout cadastrarMedicoLayout = new javax.swing.GroupLayout(cadastrarMedico);
         cadastrarMedico.setLayout(cadastrarMedicoLayout);
@@ -298,9 +300,7 @@ public class cadastrarMedico extends CRUD_JPanel {
                                     .addComponent(generoComboBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, 170, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cadastrarMedicoLayout.createSequentialGroup()
                                 .addGroup(cadastrarMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(cadastrarMedicoLayout.createSequentialGroup()
-                                        .addComponent(idLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(idLabel)
                                     .addGroup(cadastrarMedicoLayout.createSequentialGroup()
                                         .addComponent(idField)
                                         .addGap(51, 51, 51)))
@@ -310,9 +310,9 @@ public class cadastrarMedico extends CRUD_JPanel {
                                     .addComponent(crmField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(86, 86, 86))
                     .addGroup(cadastrarMedicoLayout.createSequentialGroup()
-                        .addComponent(rxLabel)
+                        .addComponent(cirurgiaoLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(crmLabel1)
+                        .addComponent(especialidadesLabel)
                         .addGap(69, 69, 69))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarMedicoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -410,14 +410,14 @@ public class cadastrarMedico extends CRUD_JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(chField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(cadastrarMedicoLayout.createSequentialGroup()
-                                .addComponent(rxLabel)
+                                .addComponent(cirurgiaoLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cirurgiaoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                         .addComponent(salvarBtn)
                         .addGap(33, 33, 33))
                     .addGroup(cadastrarMedicoLayout.createSequentialGroup()
-                        .addComponent(crmLabel1)
+                        .addComponent(especialidadesLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(especialidadesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -473,12 +473,13 @@ public class cadastrarMedico extends CRUD_JPanel {
     private javax.swing.JTextField cidadeField;
     private javax.swing.JLabel cidadeLabel;
     private javax.swing.JComboBox<String> cirurgiaoComboBox;
+    private javax.swing.JLabel cirurgiaoLabel;
     private javax.swing.JTextField crmField;
     private javax.swing.JLabel crmLabel;
-    private javax.swing.JLabel crmLabel1;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField especialidadesField;
+    private javax.swing.JLabel especialidadesLabel;
     private javax.swing.JTextField estadoField;
     private javax.swing.JLabel estadoLabel;
     private javax.swing.JComboBox<String> generoComboBox;
@@ -495,7 +496,6 @@ public class cadastrarMedico extends CRUD_JPanel {
     private javax.swing.JLabel numeroLabel;
     private javax.swing.JTextField ruaField;
     private javax.swing.JLabel ruaLabel;
-    private javax.swing.JLabel rxLabel;
     private javax.swing.JButton salvarBtn;
     private javax.swing.JTextField setorField;
     private javax.swing.JLabel setorLabel;

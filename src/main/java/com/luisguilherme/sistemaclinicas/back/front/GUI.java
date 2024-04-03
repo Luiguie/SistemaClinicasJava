@@ -340,7 +340,9 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_cadMedicoActionPerformed
 
     private void consMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consMedicoActionPerformed
-        // TODO add your handling code here:
+        consultarMedico panel = new consultarMedico(cl, container, back);
+        container.add(panel, "consultaMedico");
+        cl.show(container, "consultaMedico");
     }//GEN-LAST:event_consMedicoActionPerformed
 
     private void editMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editMedicoActionPerformed

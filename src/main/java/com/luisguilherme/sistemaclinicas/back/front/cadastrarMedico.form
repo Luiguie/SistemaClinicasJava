@@ -112,10 +112,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="idLabel" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="idLabel" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <Component id="idField" max="32767" attributes="0"/>
                                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
@@ -131,9 +128,9 @@
                           <EmptySpace min="86" pref="86" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="rxLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="cirurgiaoLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="crmLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="especialidadesLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -259,7 +256,7 @@
                                   <Component id="chField" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="rxLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cirurgiaoLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="cirurgiaoComboBox" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -269,7 +266,7 @@
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="crmLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="especialidadesLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="especialidadesField" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
@@ -413,7 +410,7 @@
             <Property name="text" type="java.lang.String" value="Id Medico"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rxLabel">
+        <Component class="javax.swing.JLabel" name="cirurgiaoLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cirurgi&#xe3;o?"/>
           </Properties>
@@ -454,7 +451,7 @@
             <Property name="text" type="java.lang.String" value="CRM"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="crmLabel1">
+        <Component class="javax.swing.JLabel" name="especialidadesLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Especialidades (Separar por Virgula)"/>
           </Properties>

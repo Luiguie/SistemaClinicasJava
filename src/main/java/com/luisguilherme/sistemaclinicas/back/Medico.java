@@ -8,7 +8,6 @@ package com.luisguilherme.sistemaclinicas.back;
  *
  * @author Guilg
  */
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 public class Medico extends AtendenteHospitalar{
@@ -46,8 +45,13 @@ public class Medico extends AtendenteHospitalar{
         return areasEspecialidade;
     }
 
-    public void setAreasEspecialidade(ArrayList<String> areasEspecialidade) {
-        this.areasEspecialidade = areasEspecialidade;
+    public void setAreasEspecialidade(String areas) {
+        areasEspecialidade.clear();
+        String[] str = areas.split("[,]",0);
+        for(String area : str){
+            areasEspecialidade.add(area);
+        }
+        
     }
 
     public boolean isCirurgiao() {
@@ -58,11 +62,17 @@ public class Medico extends AtendenteHospitalar{
         this.cirurgiao = cirurgiao;
     }
 
-    public Medico(long idMedico, int numeroCRM, boolean cirurgiao, String setor, int chSemanal, String nomeCompleto, Date dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+    public Medico(
+            long idMedico, int numeroCRM, boolean cirurgiao, String setor, 
+            int chSemanal, String nomeCompleto, Date dataNascimento, 
+            Endereco endereco, ContatoTelEmail contato, Genero genero,
+            String areas) 
+    {
         super(setor, chSemanal, nomeCompleto, dataNascimento, endereco, contato, genero);
         this.idMedico = idMedico;
         this.numeroCRM = numeroCRM;
         this.cirurgiao = cirurgiao;
+        setAreasEspecialidade(areas);
         countId+=1;
     }
     

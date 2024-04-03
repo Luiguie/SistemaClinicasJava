@@ -10,6 +10,7 @@ import com.luisguilherme.sistemaclinicas.back.Enfermeiro;
 import com.luisguilherme.sistemaclinicas.back.Genero;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -423,7 +424,13 @@ public class deletarEnfermeiro extends CRUD_JPanel {
     private void deletarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarBtnActionPerformed
         //deleta e volta para a mainWindow
         int index = selectionComboBox.getSelectedIndex();
-        getBack().getEnfermeiros().remove(index);
+        try{
+            getBack().getEnfermeiros().remove(index);
+        }
+        catch(IndexOutOfBoundsException e){
+            JOptionPane.showMessageDialog(null, "Sem dados");
+        }
+        
         getCl().show(getContainer(),"mainWindow");
     }//GEN-LAST:event_deletarBtnActionPerformed
 
