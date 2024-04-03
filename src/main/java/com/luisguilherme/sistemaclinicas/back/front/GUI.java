@@ -346,11 +346,15 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_consMedicoActionPerformed
 
     private void editMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editMedicoActionPerformed
-        // TODO add your handling code here:
+        editarMedico panel = new editarMedico(cl, container, back);
+        container.add(panel, "editaMedico");
+        cl.show(container, "editaMedico");
     }//GEN-LAST:event_editMedicoActionPerformed
 
     private void remMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remMedicoActionPerformed
-        // TODO add your handling code here:
+        deletarMedico panel = new deletarMedico(cl, container, back);
+        container.add(panel, "deletaMedico");
+        cl.show(container, "deletaMedico");
     }//GEN-LAST:event_remMedicoActionPerformed
 
     private void cadEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadEnfermeiroActionPerformed

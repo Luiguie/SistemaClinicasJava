@@ -65,6 +65,8 @@ public class cadastrarMedico extends CRUD_JPanel {
         //    return false;
         if(!validarCampo(nomeField))
             return false;
+        if(!validarCampo(especialidadesField))
+            return false;
         
        return true;
     }
