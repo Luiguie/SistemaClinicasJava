@@ -66,6 +66,7 @@ public class editarPaciente extends CRUD_JPanel {
         
         //carrego informações especificas
         idField.setText(Long.toString(p.getIdPaciente()));
+        obsTextArea.setText(p.getObsGeral());
              
             
     }
@@ -201,74 +202,38 @@ public class editarPaciente extends CRUD_JPanel {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
-        nomeField.setEditable(false);
-        nomeField.setFocusable(false);
-
         nomeLabel.setText("Nome");
 
         nascimentoLabel.setText("Data de Nascimento");
 
         ruaLabel.setText("Rua");
 
-        ruaField.setEditable(false);
-        ruaField.setFocusable(false);
-
         numeroLabel.setText("Numero");
-
-        numeroField.setEditable(false);
-        numeroField.setFocusable(false);
 
         bairroLabel.setText("Bairro");
 
-        estadoField.setEditable(false);
-        estadoField.setFocusable(false);
-
         estadoLabel.setText("Estado");
-
-        cidadeField.setEditable(false);
-        cidadeField.setFocusable(false);
 
         cidadeLabel.setText("Cidade");
 
-        nascimentoField.setEnabled(false);
-
-        bairroField.setEditable(false);
-        bairroField.setFocusable(false);
-
-        CEPFieldl.setEditable(false);
-        CEPFieldl.setFocusable(false);
-
         CEPLabel.setText("CEP");
 
-        telefoneField.setEditable(false);
-        telefoneField.setFocusable(false);
-
         telefoneLabel.setText("Telefone");
-
-        celularField.setEditable(false);
-        celularField.setFocusable(false);
 
         celularLabel.setText("Celular");
 
         emailLabel.setText("Email");
 
-        emailField.setEditable(false);
-        emailField.setFocusable(false);
-
         generoLabel.setText("Genero");
 
         generoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
         generoComboBox.setToolTipText("");
-        generoComboBox.setEnabled(false);
 
         infoGeraisLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         infoGeraisLabel.setText("Informações Gerais");
 
         infoEspecificasLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         infoEspecificasLabel.setText("Informações Especificas");
-
-        idField.setEditable(false);
-        idField.setFocusable(false);
 
         idLabel.setText("Id Paciente");
 
@@ -467,32 +432,32 @@ public class editarPaciente extends CRUD_JPanel {
                         .addComponent(generoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(consultarPacienteLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(idLabel)
+                        .addGap(6, 6, 6)
+                        .addComponent(infoEspecificasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(obsLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))
-                    .addGroup(consultarPacienteLayout.createSequentialGroup()
-                        .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton3)
+                        .addGap(0, 129, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarPacienteLayout.createSequentialGroup()
+                        .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(consultarPacienteLayout.createSequentialGroup()
                                 .addGap(37, 37, 37)
                                 .addComponent(infoEspecificasLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(consultarPacienteLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(infoEspecificasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1)
+                                .addComponent(jScrollPane2))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, consultarPacienteLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(idLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2)
+                                .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)))
-                        .addGap(0, 15, Short.MAX_VALUE))))
+                                .addComponent(obsLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(43, 43, 43))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

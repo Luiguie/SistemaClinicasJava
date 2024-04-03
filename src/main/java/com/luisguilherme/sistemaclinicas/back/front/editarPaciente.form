@@ -244,36 +244,36 @@
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="idLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Component id="infoEspecificasLabel" min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="idField" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="obsLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="130" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="129" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                   <Component id="infoEspecificasLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane2" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                  <Component id="infoEspecificasLabel" min="-2" pref="23" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="idLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="idField" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="obsLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" pref="120" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -282,10 +282,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="nomeField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="nomeLabel">
           <Properties>
@@ -303,10 +299,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="ruaField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="numeroLabel">
           <Properties>
@@ -314,10 +306,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="numeroField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="bairroLabel">
           <Properties>
@@ -325,10 +313,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="estadoField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="estadoLabel">
           <Properties>
@@ -336,10 +320,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cidadeField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cidadeLabel">
           <Properties>
@@ -347,21 +327,10 @@
           </Properties>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="nascimentoField">
-          <Properties>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="bairroField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="CEPFieldl">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="CEPLabel">
           <Properties>
@@ -369,10 +338,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="telefoneField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="telefoneLabel">
           <Properties>
@@ -380,10 +345,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="celularField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="celularLabel">
           <Properties>
@@ -396,10 +357,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="emailField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="generoLabel">
           <Properties>
@@ -415,7 +372,6 @@
               </StringArray>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
-            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -434,10 +390,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="idField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="idLabel">
           <Properties>
