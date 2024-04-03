@@ -159,6 +159,7 @@ public class editarMedico extends CRUD_JPanel {
                 c,
                 Genero.MASCULINO,
                 especialidadesField.getText());
+            Medico.setIcountId(Medico.getcountId() - 1);
             getBack().getMedicos().set(index, med);
 
         }
@@ -175,6 +176,7 @@ public class editarMedico extends CRUD_JPanel {
                 c,
                 Genero.FEMININO,
                 especialidadesField.getText());
+            Medico.setIcountId(Medico.getcountId() - 1);
             getBack().getMedicos().set(index, med);
         }
         return true;

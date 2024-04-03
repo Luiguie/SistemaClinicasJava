@@ -103,15 +103,13 @@
                   </Group>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="editBtn" max="32767" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="telefoneLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="telefoneField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="celularLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="celularField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="emailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="emailField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="generoComboBox" alignment="1" pref="170" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="telefoneLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="telefoneField" alignment="0" max="32767" attributes="0"/>
+                      <Component id="celularLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="celularField" alignment="0" max="32767" attributes="0"/>
+                      <Component id="emailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="emailField" alignment="0" max="32767" attributes="0"/>
+                      <Component id="generoComboBox" alignment="1" max="32767" attributes="0"/>
                       <Component id="generoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="crmLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="crmField" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>

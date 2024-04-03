@@ -330,7 +330,9 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_consPacienteActionPerformed
 
     private void editPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPacienteActionPerformed
-        // TODO add your handling code here:
+        editarPaciente panel = new editarPaciente(cl, container, back);
+        container.add(panel, "editarPaciente");
+        cl.show(container, "editarPaciente");
     }//GEN-LAST:event_editPacienteActionPerformed
 
     private void remPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remPacienteActionPerformed
