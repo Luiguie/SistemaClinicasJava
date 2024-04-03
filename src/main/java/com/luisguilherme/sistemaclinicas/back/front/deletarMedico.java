@@ -240,6 +240,7 @@ public class deletarMedico extends CRUD_JPanel {
         cirurgiaoLabel.setText("Cirurgião?");
 
         cirurgiaoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
+        cirurgiaoComboBox.setEnabled(false);
 
         crmLabel.setText("CRM");
 

@@ -9,7 +9,6 @@ package com.luisguilherme.sistemaclinicas.back;
  * @author Guilg
  */
 
-import java.time.LocalDate;
 import java.util.Date;
 public class DadoPessoal {
     

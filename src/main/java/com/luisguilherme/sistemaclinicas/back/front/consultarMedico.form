@@ -73,16 +73,6 @@
                   </Group>
                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="idLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="idField" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
-                              <Component id="CEPLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="estadoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="cidadeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="68" max="32767" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="cidadeField" alignment="0" max="32767" attributes="0"/>
@@ -97,8 +87,13 @@
                           </Group>
                           <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="idLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="idField" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="CEPLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="estadoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cidadeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="infoEspecificasLabel" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                               <Component id="cirurgiaoComboBox" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                               <Component id="cirurgiaoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -477,6 +472,7 @@
                 <StringItem index="1" value="N&#xe3;o"/>
               </StringArray>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

@@ -14,6 +14,7 @@ public class SistemaClinicas {
     
     private ArrayList<Enfermeiro> enfermeiros = new ArrayList<Enfermeiro>();
     private ArrayList<Medico> medicos = new ArrayList<Medico>();
+    private ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
 
     public ArrayList<Enfermeiro> getEnfermeiros() {
         return enfermeiros;
@@ -30,6 +31,15 @@ public class SistemaClinicas {
     public void setMedicos(ArrayList<Medico> medicos) {
         this.medicos = medicos;
     }
+
+    public ArrayList<Paciente> getPacientes() {
+        return pacientes;
+    }
+
+    public void setPacientes(ArrayList<Paciente> pacientes) {
+        this.pacientes = pacientes;
+    }
+    
     
     
     

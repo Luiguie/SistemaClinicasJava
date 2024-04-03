@@ -239,6 +239,7 @@ public class consultarMedico extends CRUD_JPanel {
         cirurgiaoLabel.setText("Cirurgião?");
 
         cirurgiaoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
+        cirurgiaoComboBox.setEnabled(false);
 
         crmLabel.setText("CRM");
 
@@ -276,14 +277,6 @@ public class consultarMedico extends CRUD_JPanel {
                     .addComponent(chField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(59, 59, 59)
                 .addGroup(consultarMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(consultarMedicoLayout.createSequentialGroup()
-                        .addGroup(consultarMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idLabel)
-                            .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CEPLabel)
-                            .addComponent(estadoLabel)
-                            .addComponent(cidadeLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarMedicoLayout.createSequentialGroup()
                         .addGroup(consultarMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(cidadeField, javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,6 +290,11 @@ public class consultarMedico extends CRUD_JPanel {
                         .addGap(68, 68, 68))
                     .addGroup(consultarMedicoLayout.createSequentialGroup()
                         .addGroup(consultarMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idLabel)
+                            .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CEPLabel)
+                            .addComponent(estadoLabel)
+                            .addComponent(cidadeLabel)
                             .addComponent(infoEspecificasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cirurgiaoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cirurgiaoLabel))

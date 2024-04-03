@@ -318,11 +318,15 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadPacienteActionPerformed
-        // TODO add your handling code here:
+        cadastrarPaciente panel = new cadastrarPaciente(cl, container, back);
+        container.add(panel, "cadastraPaciente");
+        cl.show(container, "cadastraPaciente");
     }//GEN-LAST:event_cadPacienteActionPerformed
 
     private void consPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consPacienteActionPerformed
-        // TODO add your handling code here:
+        consultarPaciente panel = new consultarPaciente(cl, container, back);
+        container.add(panel, "consultaPaciente");
+        cl.show(container, "consultaPaciente");
     }//GEN-LAST:event_consPacienteActionPerformed
 
     private void editPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPacienteActionPerformed

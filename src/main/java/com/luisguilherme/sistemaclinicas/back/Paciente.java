@@ -12,14 +12,24 @@ import java.time.LocalDate;
  */
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 public class Paciente extends DadoPessoal{
     private long idPaciente;
+    private static long countId=0;
     private int idade;
-    private LocalDate dataCadastro;
+    private Date dataCadastro;
     private String obsGeral;
     private ArrayList<ConsultaMedica> historicoConsultasMedicas = new ArrayList<ConsultaMedica>();
     private ArrayList<Responsavel> contatoResponsavel = new ArrayList<Responsavel>();
+    
+    public static long getcountId() {
+        return countId;
+    }
 
+    public static void setIcountId(long id) {
+        countId = id;
+    }
+    
     public long getIdPaciente() {
         return idPaciente;
     }
@@ -32,15 +42,18 @@ public class Paciente extends DadoPessoal{
         return idade;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setIdade(Date dataNascimento) {
+        
+        long dif = Math.abs(dataCadastro.getTime() - dataNascimento.getTime());
+        long days = TimeUnit.DAYS.convert(dif, TimeUnit.MILLISECONDS);
+        idade = (int) (days/365);
     }
 
-    public LocalDate getDataCadastro() {
+    public Date getDataCadastro() {
         return dataCadastro;
     }
 
-    public void setDataCadastro(LocalDate dataCadastro) {
+    public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
 
@@ -68,12 +81,14 @@ public class Paciente extends DadoPessoal{
         this.contatoResponsavel = contatoResponsavel;
     }
 
-    public Paciente(long idPaciente, int idade, LocalDate dataCadastro, String obsGeral, String nomeCompleto, Date dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+    public Paciente(long idPaciente, String obsGeral, String nomeCompleto, Date dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
         super(nomeCompleto, dataNascimento, endereco, contato, genero);
+        //inicializa data com a data atual
+        this.dataCadastro = new Date();
         this.idPaciente = idPaciente;
-        this.idade = idade;
-        this.dataCadastro = dataCadastro;
+        setIdade(dataNascimento);
         this.obsGeral = obsGeral;
+        countId+=1;
     }
     
     
