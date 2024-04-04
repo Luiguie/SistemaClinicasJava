@@ -9,6 +9,7 @@ import com.luisguilherme.sistemaclinicas.back.Medico;
 import com.luisguilherme.sistemaclinicas.back.Paciente;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
 /**
@@ -24,7 +25,7 @@ public class consultarConsultaMedica extends CRUD_JPanel {
     public consultarConsultaMedica(CardLayout cl, JPanel container, SistemaClinicas back) {
         super(cl, container, back);
         initComponents();
-        listPacientes();
+        listPacientes(selecPacienteComboBox);
     }
     
     public Paciente getPacSelecionado() {
@@ -35,11 +36,11 @@ public class consultarConsultaMedica extends CRUD_JPanel {
         this.pacSelecionado = pacSelecionado;
     }
     
-    public void listPacientes(){
+    public void listPacientes(JComboBox cb){
         //carrega opções no comboBox
-        selecPacienteComboBox.removeAllItems();
+        cb.removeAllItems();
         for(Paciente e : getBack().getPacientes()){
-            selecPacienteComboBox.addItem(e.getNomeCompleto());
+            cb.addItem(e.getNomeCompleto());
         }
     }
     public void listConsultas(){

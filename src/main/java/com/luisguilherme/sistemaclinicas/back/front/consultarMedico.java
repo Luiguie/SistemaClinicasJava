@@ -75,7 +75,8 @@ public class consultarMedico extends CRUD_JPanel {
             cirurgiaoComboBox.setSelectedIndex(1);
         }
         
-        //carrego especialidades
+        //limpo e carrego especialidades
+        especialidadesField.setText("");
         for(String area : m.getAreasEspecialidade()){
             especialidadesField.setText(especialidadesField.getText() + 
                     area + ",");
