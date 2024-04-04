@@ -124,6 +124,11 @@ public class editarPaciente extends CRUD_JPanel {
         return temp;
     }
     
+    public void deletarResponsavel(int index){
+        getBack().getTempResponsaveis().remove(index);
+        loadResponsaveis();
+    }
+    
     public boolean editarInfo(int index){
         if(!validar()){
             JOptionPane.showMessageDialog(null, "Campo(s) Invalido(s)");
@@ -146,6 +151,8 @@ public class editarPaciente extends CRUD_JPanel {
             emailField.getText());
 
         //checo o genero selecionado e populo os demais campos
+        //copio o arraylist em um novo para evitar referencias de memoria
+        ArrayList<Responsavel> temp = copyArrResp(getBack().getTempResponsaveis());
         if(generoComboBox.getSelectedIndex() == 0){
             Paciente pac = new Paciente(
                 Long.parseLong(idField.getText()),
@@ -155,7 +162,7 @@ public class editarPaciente extends CRUD_JPanel {
                 e,
                 c,
                 Genero.MASCULINO,
-                getBack().getTempResponsaveis());
+                temp);
             Paciente.setIcountId(Paciente.getcountId() - 1);
             getBack().getPacientes().set(index, pac);
 
@@ -169,7 +176,7 @@ public class editarPaciente extends CRUD_JPanel {
                 e,
                 c,
                 Genero.FEMININO,
-                getBack().getTempResponsaveis());
+                temp);
             Paciente.setIcountId(Paciente.getcountId() - 1);
             getBack().getPacientes().set(index, pac);
         }
@@ -224,9 +231,10 @@ public class editarPaciente extends CRUD_JPanel {
         selectionComboBox = new javax.swing.JComboBox<>();
         selectionLabel = new javax.swing.JLabel();
         editarBtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        addRespBtn = new javax.swing.JButton();
+        editRespBtn = new javax.swing.JButton();
+        deleteRespBtn = new javax.swing.JButton();
+        consRespBtn = new javax.swing.JButton();
 
         nomeLabel.setText("Nome");
 
@@ -296,11 +304,33 @@ public class editarPaciente extends CRUD_JPanel {
             }
         });
 
-        jButton1.setText("➕");
+        addRespBtn.setText("➕");
+        addRespBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addRespBtnActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("✎");
+        editRespBtn.setText("✎");
+        editRespBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editRespBtnActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("X");
+        deleteRespBtn.setText("X");
+        deleteRespBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteRespBtnActionPerformed(evt);
+            }
+        });
+
+        consRespBtn.setText("🔍");
+        consRespBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consRespBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout consultarPacienteLayout = new javax.swing.GroupLayout(consultarPaciente);
         consultarPaciente.setLayout(consultarPacienteLayout);
@@ -318,27 +348,23 @@ public class editarPaciente extends CRUD_JPanel {
                                 .addComponent(backBtn)
                                 .addGap(500, 500, 500)
                                 .addComponent(editarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(obsLabel)
-                                .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(consultarPacienteLayout.createSequentialGroup()
-                                    .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(consultarPacienteLayout.createSequentialGroup()
-                                            .addGap(493, 493, 493)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarPacienteLayout.createSequentialGroup()
-                                            .addComponent(idLabel)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(idLabel)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarPacienteLayout.createSequentialGroup()
                                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(28, 28, 28)
-                                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(consultarPacienteLayout.createSequentialGroup()
+                                                    .addGap(28, 28, 28)
+                                                    .addComponent(deleteRespBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarPacienteLayout.createSequentialGroup()
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(editRespBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(consRespBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(infoEspecificasLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(consultarPacienteLayout.createSequentialGroup()
-                                    .addGap(540, 540, 540)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(consultarPacienteLayout.createSequentialGroup()
                                     .addGap(279, 279, 279)
                                     .addComponent(infoEspecificasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -379,7 +405,15 @@ public class editarPaciente extends CRUD_JPanel {
                                         .addComponent(emailLabel)
                                         .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(generoLabel)
-                                        .addComponent(generoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(generoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(consultarPacienteLayout.createSequentialGroup()
+                                    .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(obsLabel)
+                                        .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(addRespBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(consultarPacienteLayout.createSequentialGroup()
                         .addGap(230, 230, 230)
                         .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -456,34 +490,38 @@ public class editarPaciente extends CRUD_JPanel {
                         .addComponent(generoLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(generoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(consultarPacienteLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(infoEspecificasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addGap(37, 37, 37)
+                        .addComponent(infoEspecificasLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addGap(0, 129, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarPacienteLayout.createSequentialGroup()
-                        .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane2))
+                    .addGroup(consultarPacienteLayout.createSequentialGroup()
+                        .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(consultarPacienteLayout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(infoEspecificasLabel1)
+                                .addGap(6, 6, 6)
+                                .addComponent(infoEspecificasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarPacienteLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                                .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(addRespBtn)
+                                    .addGroup(consultarPacienteLayout.createSequentialGroup()
+                                        .addComponent(idLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(obsLabel)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(consultarPacienteLayout.createSequentialGroup()
+                                .addComponent(consRespBtn)
+                                .addGap(9, 9, 9)
+                                .addComponent(editRespBtn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, consultarPacienteLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(idLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(obsLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(43, 43, 43))))
+                                .addComponent(deleteRespBtn))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(43, 43, 43))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -498,7 +536,7 @@ public class editarPaciente extends CRUD_JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 611, Short.MAX_VALUE)
+            .addGap(0, 635, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGap(0, 12, Short.MAX_VALUE)
@@ -525,10 +563,48 @@ public class editarPaciente extends CRUD_JPanel {
         getCl().show(getContainer(),"mainWindow");
     }//GEN-LAST:event_backBtnActionPerformed
 
+    private void deleteRespBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteRespBtnActionPerformed
+        if(!listResponsaveis.isSelectionEmpty()){
+            int index = listResponsaveis.getSelectedIndex();
+            deletarResponsavel(index);
+        }
+    }//GEN-LAST:event_deleteRespBtnActionPerformed
+
+    private void addRespBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRespBtnActionPerformed
+        cadastrarResponsavel panel = new cadastrarResponsavel(getCl(), getContainer(), getBack(),"editarPaciente",this);
+        getContainer().add(panel, "cadastrarResponsavel");
+        getCl().show(getContainer(), "cadastrarResponsavel");
+    }//GEN-LAST:event_addRespBtnActionPerformed
+
+    private void consRespBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consRespBtnActionPerformed
+        if(!listResponsaveis.isSelectionEmpty()){
+            int index = listResponsaveis.getSelectedIndex();
+            Responsavel r = getBack().getTempResponsaveis().get(index);
+            
+            consultarResponsavel panel = new consultarResponsavel(getCl(), getContainer(), getBack(),"editarPaciente",r);
+            getContainer().add(panel, "consultarResponsavel");
+            getCl().show(getContainer(), "consultarResponsavel");
+        
+        }
+    }//GEN-LAST:event_consRespBtnActionPerformed
+
+    private void editRespBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editRespBtnActionPerformed
+        if(!listResponsaveis.isSelectionEmpty()){
+            int index = listResponsaveis.getSelectedIndex();
+            Responsavel r = getBack().getTempResponsaveis().get(index);
+            
+            editarResponsavel panel = new editarResponsavel(getCl(), getContainer(), getBack(),"editarPaciente",this,r);
+            getContainer().add(panel, "editarResponsavel");
+            getCl().show(getContainer(), "editarResponsavel");
+        
+        }
+    }//GEN-LAST:event_editRespBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CEPFieldl;
     private javax.swing.JLabel CEPLabel;
+    private javax.swing.JButton addRespBtn;
     private javax.swing.JButton backBtn;
     private javax.swing.JTextField bairroField;
     private javax.swing.JLabel bairroLabel;
@@ -536,7 +612,10 @@ public class editarPaciente extends CRUD_JPanel {
     private javax.swing.JLabel celularLabel;
     private javax.swing.JTextField cidadeField;
     private javax.swing.JLabel cidadeLabel;
+    private javax.swing.JButton consRespBtn;
     private javax.swing.JPanel consultarPaciente;
+    private javax.swing.JButton deleteRespBtn;
+    private javax.swing.JButton editRespBtn;
     private javax.swing.JButton editarBtn;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
@@ -549,9 +628,6 @@ public class editarPaciente extends CRUD_JPanel {
     private javax.swing.JLabel infoEspecificasLabel;
     private javax.swing.JLabel infoEspecificasLabel1;
     private javax.swing.JLabel infoGeraisLabel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> listResponsaveis;

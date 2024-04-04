@@ -8,8 +8,11 @@ import com.luisguilherme.sistemaclinicas.back.ContatoTelEmail;
 import com.luisguilherme.sistemaclinicas.back.Endereco;
 import com.luisguilherme.sistemaclinicas.back.Genero;
 import com.luisguilherme.sistemaclinicas.back.Paciente;
+import com.luisguilherme.sistemaclinicas.back.Responsavel;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -33,6 +36,24 @@ public class deletarPaciente extends CRUD_JPanel {
         for(Paciente e : getBack().getPacientes()){
             selectionComboBox.addItem(e.getNomeCompleto());
         }
+    }
+    
+    @Override
+    public void loadResponsaveis(){
+        listResponsaveis.removeAll();
+        DefaultListModel<String> model = new DefaultListModel<>();
+        for(Responsavel r : getBack().getTempResponsaveis()){
+            model.addElement(r.getNomeResponsavel());  
+        }
+        listResponsaveis.setModel(model);
+    }
+    
+    public ArrayList<Responsavel> copyArrResp(ArrayList<Responsavel> arr){
+        ArrayList<Responsavel> temp = new ArrayList<Responsavel>();
+        for(Responsavel r : arr){
+            temp.add(r);
+        }
+        return temp;
     }
     
     public void loadInfo(int index){
@@ -70,7 +91,10 @@ public class deletarPaciente extends CRUD_JPanel {
         obsTextArea.setText(p.getObsGeral());
         dataCadastroField.setDate(p.getDataCadastro());
              
-            
+        //carrego responsaveis
+        getBack().getTempResponsaveis().clear();
+        getBack().setTempResponsaveis(copyArrResp(p.getContatoResponsavel()));
+        loadResponsaveis();
     }
 
     /**

@@ -147,6 +147,7 @@ public class consultarPaciente extends CRUD_JPanel {
         idadeField = new javax.swing.JTextField();
         idLabel2 = new javax.swing.JLabel();
         dataCadastroField = new com.toedter.calendar.JDateChooser();
+        consRespBtn = new javax.swing.JButton();
 
         nomeField.setEditable(false);
         nomeField.setFocusable(false);
@@ -248,6 +249,13 @@ public class consultarPaciente extends CRUD_JPanel {
 
         dataCadastroField.setEnabled(false);
 
+        consRespBtn.setText("🔍");
+        consRespBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consRespBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout consultarPacienteLayout = new javax.swing.GroupLayout(consultarPaciente);
         consultarPaciente.setLayout(consultarPacienteLayout);
         consultarPacienteLayout.setHorizontalGroup(
@@ -275,9 +283,12 @@ public class consultarPaciente extends CRUD_JPanel {
                             .addComponent(idadeLabel)
                             .addComponent(idLabel2)
                             .addComponent(dataCadastroField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consultarPacienteLayout.createSequentialGroup()
+                                .addComponent(consRespBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(infoEspecificasLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(consultarPacienteLayout.createSequentialGroup()
                         .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -379,7 +390,9 @@ public class consultarPaciente extends CRUD_JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(consultarPacienteLayout.createSequentialGroup()
-                                .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(consultarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(consRespBtn))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(idadeLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -388,7 +401,7 @@ public class consultarPaciente extends CRUD_JPanel {
                                 .addComponent(idLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(dataCadastroField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE))
                             .addComponent(jScrollPane1))))
                 .addGap(39, 39, 39))
         );
@@ -418,6 +431,18 @@ public class consultarPaciente extends CRUD_JPanel {
         loadInfo(index);
     }//GEN-LAST:event_selectionComboBoxActionPerformed
 
+    private void consRespBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consRespBtnActionPerformed
+        if(!listResponsaveis.isSelectionEmpty()){
+            int index = listResponsaveis.getSelectedIndex();
+            Responsavel r = getBack().getTempResponsaveis().get(index);
+
+            consultarResponsavel panel = new consultarResponsavel(getCl(), getContainer(), getBack(),"consultaPaciente",r);
+            getContainer().add(panel, "consultarResponsavel");
+            getCl().show(getContainer(), "consultarResponsavel");
+
+        }
+    }//GEN-LAST:event_consRespBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CEPFieldl;
@@ -429,6 +454,7 @@ public class consultarPaciente extends CRUD_JPanel {
     private javax.swing.JLabel celularLabel;
     private javax.swing.JTextField cidadeField;
     private javax.swing.JLabel cidadeLabel;
+    private javax.swing.JButton consRespBtn;
     private javax.swing.JPanel consultarPaciente;
     private com.toedter.calendar.JDateChooser dataCadastroField;
     private javax.swing.JTextField emailField;

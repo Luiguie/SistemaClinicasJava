@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -94,6 +94,7 @@
                               <Component id="addRespBtn" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
                               <Component id="editRespBtn" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
                               <Component id="deleteRespBtn" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
+                              <Component id="consRespBtn" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -222,6 +223,8 @@
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Component id="addRespBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="consRespBtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Component id="editRespBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="deleteRespBtn" min="-2" max="-2" attributes="0"/>
@@ -426,11 +429,25 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x270e;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editRespBtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="deleteRespBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="X"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteRespBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="consRespBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="\ud83d\udd0d" containsInvalidXMLChars="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consRespBtnActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

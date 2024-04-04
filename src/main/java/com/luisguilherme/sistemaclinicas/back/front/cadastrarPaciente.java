@@ -138,6 +138,10 @@ public class cadastrarPaciente extends CRUD_JPanel {
         getBack().getTempResponsaveis().clear();
         return true;
     }
+    public void deletarResponsavel(int index){
+        getBack().getTempResponsaveis().remove(index);
+        loadResponsaveis();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -188,6 +192,7 @@ public class cadastrarPaciente extends CRUD_JPanel {
         addRespBtn = new javax.swing.JButton();
         editRespBtn = new javax.swing.JButton();
         deleteRespBtn = new javax.swing.JButton();
+        consRespBtn = new javax.swing.JButton();
 
         nomeLabel.setText("Nome");
 
@@ -260,8 +265,25 @@ public class cadastrarPaciente extends CRUD_JPanel {
         });
 
         editRespBtn.setText("✎");
+        editRespBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editRespBtnActionPerformed(evt);
+            }
+        });
 
         deleteRespBtn.setText("X");
+        deleteRespBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteRespBtnActionPerformed(evt);
+            }
+        });
+
+        consRespBtn.setText("🔍");
+        consRespBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consRespBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout cadastrarPacienteLayout = new javax.swing.GroupLayout(cadastrarPaciente);
         cadastrarPaciente.setLayout(cadastrarPacienteLayout);
@@ -309,7 +331,8 @@ public class cadastrarPaciente extends CRUD_JPanel {
                         .addGroup(cadastrarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(addRespBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(editRespBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(deleteRespBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(deleteRespBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(consRespBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(cadastrarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cadastrarPacienteLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
@@ -411,6 +434,8 @@ public class cadastrarPaciente extends CRUD_JPanel {
                         .addGap(15, 15, 15)
                         .addComponent(addRespBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(consRespBtn)
+                        .addGap(1, 1, 1)
                         .addComponent(editRespBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(deleteRespBtn))
@@ -456,6 +481,37 @@ public class cadastrarPaciente extends CRUD_JPanel {
         getCl().show(getContainer(), "cadastrarResponsavel");
     }//GEN-LAST:event_addRespBtnActionPerformed
 
+    private void deleteRespBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteRespBtnActionPerformed
+        if(!listResponsaveis.isSelectionEmpty()){
+            int index = listResponsaveis.getSelectedIndex();
+            deletarResponsavel(index);
+        }
+    }//GEN-LAST:event_deleteRespBtnActionPerformed
+
+    private void consRespBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consRespBtnActionPerformed
+        if(!listResponsaveis.isSelectionEmpty()){
+            int index = listResponsaveis.getSelectedIndex();
+            Responsavel r = getBack().getTempResponsaveis().get(index);
+            
+            consultarResponsavel panel = new consultarResponsavel(getCl(), getContainer(), getBack(),"cadastraPaciente",r);
+            getContainer().add(panel, "consultarResponsavel");
+            getCl().show(getContainer(), "consultarResponsavel");
+        
+        }
+    }//GEN-LAST:event_consRespBtnActionPerformed
+
+    private void editRespBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editRespBtnActionPerformed
+        if(!listResponsaveis.isSelectionEmpty()){
+            int index = listResponsaveis.getSelectedIndex();
+            Responsavel r = getBack().getTempResponsaveis().get(index);
+            
+            editarResponsavel panel = new editarResponsavel(getCl(), getContainer(), getBack(),"cadastraPaciente",this,r);
+            getContainer().add(panel, "editarResponsavel");
+            getCl().show(getContainer(), "editarResponsavel");
+        
+        }
+    }//GEN-LAST:event_editRespBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CEPFieldl;
@@ -469,6 +525,7 @@ public class cadastrarPaciente extends CRUD_JPanel {
     private javax.swing.JLabel celularLabel;
     private javax.swing.JTextField cidadeField;
     private javax.swing.JLabel cidadeLabel;
+    private javax.swing.JButton consRespBtn;
     private javax.swing.JButton deleteRespBtn;
     private javax.swing.JButton editRespBtn;
     private javax.swing.JTextField emailField;

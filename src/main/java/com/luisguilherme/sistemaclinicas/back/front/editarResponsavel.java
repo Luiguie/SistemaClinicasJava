@@ -5,38 +5,42 @@
 package com.luisguilherme.sistemaclinicas.back.front;
 
 import com.luisguilherme.sistemaclinicas.back.ContatoTelEmail;
-import com.luisguilherme.sistemaclinicas.back.Paciente;
 import com.luisguilherme.sistemaclinicas.back.Responsavel;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 /**
  *
  * @author Guilg
  */
-public class cadastrarResponsavel extends CRUD_JPanel {
+public class editarResponsavel extends CRUD_JPanel {
 
     /**
-     * Creates new form cadastrarResponsavel
+     * Creates new form editarResponsavel
      */
     private String previousWindown;
     private CRUD_JPanel parent;
+    private Responsavel resp;
     
-    public cadastrarResponsavel(CardLayout cl, JPanel container, 
-            SistemaClinicas back, String previousWindown, CRUD_JPanel parent) {
+    public editarResponsavel(CardLayout cl, JPanel container, 
+            SistemaClinicas back, String previousWindown, CRUD_JPanel parent,
+            Responsavel resp) {
         super(cl, container, back);
         this.previousWindown = previousWindown;
         this.parent = parent;
+        this.resp = resp;
         initComponents();
-        loadId();
+        loadInfo();
     }
     
-    public void loadId(){
-        //carrega o proximo id no campo bloqueado
-        idField.setText(Long.toString(Responsavel.getcountId()+ 1));
+    public void loadInfo(){
+        idField.setText(Long.toString(resp.getIdResponsavel()));
+        nomeField.setText(resp.getNomeResponsavel());
+        emailField.setText(resp.getEmail());
+        celularField.setText(resp.getCelular());
+        telefoneField.setText(resp.getTelefone());
     }
     
     public boolean validar(){
@@ -54,21 +58,17 @@ public class cadastrarResponsavel extends CRUD_JPanel {
        return true;
     }
     
-    public boolean cadastrar(){
+    public boolean editarInfo(){
         //checo se são validos e populo
         if(!validar()){
             JOptionPane.showMessageDialog(null, "Campo(s) Invalido(s)");
             return false;
         }
- 
-        Responsavel r = new Responsavel(
-            Long.parseLong(idField.getText()),
-            nomeField.getText(),
-            telefoneField.getText(),
-            celularField.getText(),
-            emailField.getText());
         
-            getBack().getTempResponsaveis().add(r);
+        resp.setNomeResponsavel(nomeField.getText());
+        resp.setTelefone(telefoneField.getText());
+        resp.setCelular(celularField.getText());
+        resp.setEmail(emailField.getText());
         
         return true;
     }
@@ -94,7 +94,7 @@ public class cadastrarResponsavel extends CRUD_JPanel {
         idField = new javax.swing.JTextField();
         idLabel = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
-        salvarBtn = new javax.swing.JButton();
+        editarBtn = new javax.swing.JButton();
 
         nomeLabel.setText("Nome");
 
@@ -116,10 +116,10 @@ public class cadastrarResponsavel extends CRUD_JPanel {
             }
         });
 
-        salvarBtn.setText("Salvar");
-        salvarBtn.addActionListener(new java.awt.event.ActionListener() {
+        editarBtn.setText("Editar");
+        editarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salvarBtnActionPerformed(evt);
+                editarBtnActionPerformed(evt);
             }
         });
 
@@ -154,7 +154,7 @@ public class cadastrarResponsavel extends CRUD_JPanel {
                 .addGap(86, 86, 86))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarResponsavelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(salvarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(editarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
         cadastrarResponsavelLayout.setVerticalGroup(
@@ -181,7 +181,7 @@ public class cadastrarResponsavel extends CRUD_JPanel {
                     .addComponent(celularField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 339, Short.MAX_VALUE)
-                .addComponent(salvarBtn)
+                .addComponent(editarBtn)
                 .addGap(33, 33, 33))
         );
 
@@ -198,7 +198,7 @@ public class cadastrarResponsavel extends CRUD_JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 594, Short.MAX_VALUE)
+            .addGap(0, 584, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -207,18 +207,18 @@ public class cadastrarResponsavel extends CRUD_JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void salvarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarBtnActionPerformed
-
-        if(cadastrar()){
-            parent.loadResponsaveis();
-            getCl().show(getContainer(),previousWindown);
-        }
-    }//GEN-LAST:event_salvarBtnActionPerformed
-
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
 
         getCl().show(getContainer(),previousWindown);
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void editarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarBtnActionPerformed
+
+        if(editarInfo()){
+            parent.loadResponsaveis();
+            getCl().show(getContainer(),previousWindown);
+        }
+    }//GEN-LAST:event_editarBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -226,13 +226,13 @@ public class cadastrarResponsavel extends CRUD_JPanel {
     private javax.swing.JPanel cadastrarResponsavel;
     private javax.swing.JTextField celularField;
     private javax.swing.JLabel celularLabel;
+    private javax.swing.JButton editarBtn;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField idField;
     private javax.swing.JLabel idLabel;
     private javax.swing.JTextField nomeField;
     private javax.swing.JLabel nomeLabel;
-    private javax.swing.JButton salvarBtn;
     private javax.swing.JTextField telefoneField;
     private javax.swing.JLabel telefoneLabel;
     // End of variables declaration//GEN-END:variables

@@ -4,73 +4,36 @@
  */
 package com.luisguilherme.sistemaclinicas.back.front;
 
-import com.luisguilherme.sistemaclinicas.back.ContatoTelEmail;
 import com.luisguilherme.sistemaclinicas.back.Paciente;
 import com.luisguilherme.sistemaclinicas.back.Responsavel;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 /**
  *
  * @author Guilg
  */
-public class cadastrarResponsavel extends CRUD_JPanel {
+public class consultarResponsavel extends CRUD_JPanel {
 
-    /**
-     * Creates new form cadastrarResponsavel
-     */
     private String previousWindown;
-    private CRUD_JPanel parent;
+    private Responsavel resp;
     
-    public cadastrarResponsavel(CardLayout cl, JPanel container, 
-            SistemaClinicas back, String previousWindown, CRUD_JPanel parent) {
+    public consultarResponsavel(CardLayout cl, JPanel container, 
+            SistemaClinicas back, String previousWindown, Responsavel resp) {
         super(cl, container, back);
         this.previousWindown = previousWindown;
-        this.parent = parent;
+        this.resp = resp;
         initComponents();
-        loadId();
+        loadInfo();
     }
     
-    public void loadId(){
-        //carrega o proximo id no campo bloqueado
-        idField.setText(Long.toString(Responsavel.getcountId()+ 1));
-    }
-    
-    public boolean validar(){
-        //valida todos os campos presentes no Jpanel e retorna falso caso algum
-        //esteja invalido
-        if(!validarCampo(telefoneField))
-            return false;
-        if(!validarCampo(celularField))
-            return false;
-        if(!validarEmail(emailField))
-            return false;
-        if(!validarCampo(nomeField))
-            return false;
-        
-       return true;
-    }
-    
-    public boolean cadastrar(){
-        //checo se são validos e populo
-        if(!validar()){
-            JOptionPane.showMessageDialog(null, "Campo(s) Invalido(s)");
-            return false;
-        }
- 
-        Responsavel r = new Responsavel(
-            Long.parseLong(idField.getText()),
-            nomeField.getText(),
-            telefoneField.getText(),
-            celularField.getText(),
-            emailField.getText());
-        
-            getBack().getTempResponsaveis().add(r);
-        
-        return true;
+    public void loadInfo(){
+        idField.setText(Long.toString(resp.getIdResponsavel()));
+        nomeField.setText(resp.getNomeResponsavel());
+        emailField.setText(resp.getEmail());
+        celularField.setText(resp.getCelular());
+        telefoneField.setText(resp.getTelefone());
     }
 
     /**
@@ -82,7 +45,7 @@ public class cadastrarResponsavel extends CRUD_JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cadastrarResponsavel = new javax.swing.JPanel();
+        consultarResponsavel = new javax.swing.JPanel();
         nomeField = new javax.swing.JTextField();
         nomeLabel = new javax.swing.JLabel();
         telefoneField = new javax.swing.JTextField();
@@ -94,15 +57,26 @@ public class cadastrarResponsavel extends CRUD_JPanel {
         idField = new javax.swing.JTextField();
         idLabel = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
-        salvarBtn = new javax.swing.JButton();
+
+        nomeField.setEditable(false);
+        nomeField.setFocusable(false);
 
         nomeLabel.setText("Nome");
 
+        telefoneField.setEditable(false);
+        telefoneField.setFocusable(false);
+
         telefoneLabel.setText("Telefone");
+
+        celularField.setEditable(false);
+        celularField.setFocusable(false);
 
         celularLabel.setText("Celular");
 
         emailLabel.setText("Email");
+
+        emailField.setEditable(false);
+        emailField.setFocusable(false);
 
         idField.setEditable(false);
         idField.setFocusable(false);
@@ -116,73 +90,60 @@ public class cadastrarResponsavel extends CRUD_JPanel {
             }
         });
 
-        salvarBtn.setText("Salvar");
-        salvarBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salvarBtnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout cadastrarResponsavelLayout = new javax.swing.GroupLayout(cadastrarResponsavel);
-        cadastrarResponsavel.setLayout(cadastrarResponsavelLayout);
-        cadastrarResponsavelLayout.setHorizontalGroup(
-            cadastrarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cadastrarResponsavelLayout.createSequentialGroup()
-                .addGroup(cadastrarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrarResponsavelLayout.createSequentialGroup()
+        javax.swing.GroupLayout consultarResponsavelLayout = new javax.swing.GroupLayout(consultarResponsavel);
+        consultarResponsavel.setLayout(consultarResponsavelLayout);
+        consultarResponsavelLayout.setHorizontalGroup(
+            consultarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(consultarResponsavelLayout.createSequentialGroup()
+                .addGroup(consultarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(consultarResponsavelLayout.createSequentialGroup()
                         .addGap(92, 92, 92)
-                        .addGroup(cadastrarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(consultarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(nomeLabel, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nomeField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(celularField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(celularLabel, javax.swing.GroupLayout.Alignment.LEADING)))
-                    .addGroup(cadastrarResponsavelLayout.createSequentialGroup()
+                    .addGroup(consultarResponsavelLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(backBtn)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                .addGroup(cadastrarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrarResponsavelLayout.createSequentialGroup()
-                        .addGroup(cadastrarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(consultarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(consultarResponsavelLayout.createSequentialGroup()
+                        .addGroup(consultarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(idLabel)
                             .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(54, 54, 54)
-                        .addGroup(cadastrarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(consultarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(telefoneLabel)
                             .addComponent(telefoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(emailLabel)
                     .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(86, 86, 86))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarResponsavelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(salvarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
         );
-        cadastrarResponsavelLayout.setVerticalGroup(
-            cadastrarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cadastrarResponsavelLayout.createSequentialGroup()
+        consultarResponsavelLayout.setVerticalGroup(
+            consultarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(consultarResponsavelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(backBtn)
                 .addGap(29, 29, 29)
-                .addGroup(cadastrarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(consultarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nomeLabel)
                     .addComponent(telefoneLabel)
                     .addComponent(idLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cadastrarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(consultarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nomeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(telefoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(cadastrarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(consultarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(celularLabel)
                     .addComponent(emailLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cadastrarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(consultarResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(celularField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 339, Short.MAX_VALUE)
-                .addComponent(salvarBtn)
-                .addGap(33, 33, 33))
+                .addContainerGap(399, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -193,27 +154,19 @@ public class cadastrarResponsavel extends CRUD_JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(cadastrarResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(consultarResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 594, Short.MAX_VALUE)
+            .addGap(0, 584, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(cadastrarResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(consultarResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void salvarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarBtnActionPerformed
-
-        if(cadastrar()){
-            parent.loadResponsaveis();
-            getCl().show(getContainer(),previousWindown);
-        }
-    }//GEN-LAST:event_salvarBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
 
@@ -223,16 +176,15 @@ public class cadastrarResponsavel extends CRUD_JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
-    private javax.swing.JPanel cadastrarResponsavel;
     private javax.swing.JTextField celularField;
     private javax.swing.JLabel celularLabel;
+    private javax.swing.JPanel consultarResponsavel;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField idField;
     private javax.swing.JLabel idLabel;
     private javax.swing.JTextField nomeField;
     private javax.swing.JLabel nomeLabel;
-    private javax.swing.JButton salvarBtn;
     private javax.swing.JTextField telefoneField;
     private javax.swing.JLabel telefoneLabel;
     // End of variables declaration//GEN-END:variables
