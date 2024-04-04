@@ -73,6 +73,8 @@ public class cadastrarPaciente extends CRUD_JPanel {
         //    return false;
         if(!validarCampo(nomeField))
             return false;
+        if(!validarCampo(obsTextArea))
+            return false;
         
        return true;
     }
@@ -471,7 +473,7 @@ public class cadastrarPaciente extends CRUD_JPanel {
     }//GEN-LAST:event_salvarBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-
+        getBack().getTempResponsaveis().clear();
         getCl().show(getContainer(),"mainWindow");
     }//GEN-LAST:event_backBtnActionPerformed
 

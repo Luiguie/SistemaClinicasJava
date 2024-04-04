@@ -9,6 +9,7 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.CardLayout;
 import java.util.Date;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -49,6 +50,13 @@ public class CRUD_JPanel extends javax.swing.JPanel{
         return !f.getText().equals("");
         
     }
+    
+    public boolean validarCampo(JTextArea f){
+        //checa se o campo está vazio e retorna false caso esteja
+        return !f.getText().equals("");
+        
+    }
+    
     public boolean validarNum(JTextField f){
         if(!validarCampo(f)){
             return false;

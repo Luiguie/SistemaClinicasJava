@@ -12,11 +12,20 @@ public class ConsultaMedica {
     private long idConsulta;
     private long idPaciente;
     private long idMedico;
+    private static long countId=0;
     private String exameQueixa;
     private String diagnostico;
     private String prescricao;
     private boolean indicacaoCirurgica;
+    
+    public static long getcountId() {
+        return countId;
+    }
 
+    public static void setIcountId(long id) {
+        countId = id;
+    }
+    
     public long getIdConsulta() {
         return idConsulta;
     }
@@ -81,6 +90,7 @@ public class ConsultaMedica {
         this.diagnostico = diagnostico;
         this.prescricao = prescricao;
         this.indicacaoCirurgica = indicacaoCirurgica;
+        countId+=1;
     }
     
     
