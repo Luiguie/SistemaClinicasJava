@@ -37,14 +37,14 @@ public class consultarConsultaMedica extends CRUD_JPanel {
     
     public void listPacientes(){
         //carrega opções no comboBox
-        selecPacienteComboBox.removeAll();
+        selecPacienteComboBox.removeAllItems();
         for(Paciente e : getBack().getPacientes()){
             selecPacienteComboBox.addItem(e.getNomeCompleto());
         }
     }
     public void listConsultas(){
         //carrega opções no comboBox
-        selecConsultaComboBox.removeAll();
+        selecConsultaComboBox.removeAllItems();
         for(ConsultaMedica e : pacSelecionado.getHistoricoConsultasMedicas()){
             selecConsultaComboBox.addItem(Long.toString(e.getIdConsulta()));
         }
@@ -53,7 +53,8 @@ public class consultarConsultaMedica extends CRUD_JPanel {
     public void loadInfo(int index){
         
         ConsultaMedica cm = pacSelecionado.getHistoricoConsultasMedicas().get(index);
-        
+        pacienteComboBox.removeAllItems();
+        medicoComboBox.removeAllItems();
         //populo paciente
         for(Paciente p : getBack().getPacientes()){
             if(p.getIdPaciente() == cm.getIdPaciente()){
@@ -297,7 +298,6 @@ public class consultarConsultaMedica extends CRUD_JPanel {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void selecPacienteComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selecPacienteComboBoxActionPerformed
-        selecConsultaComboBox.removeAll();
         int index = selecPacienteComboBox.getSelectedIndex();
         pacSelecionado = getBack().getPacientes().get(index);
         listConsultas();
