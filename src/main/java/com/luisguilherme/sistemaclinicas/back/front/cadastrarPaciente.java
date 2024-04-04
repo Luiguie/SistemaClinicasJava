@@ -8,8 +8,12 @@ import com.luisguilherme.sistemaclinicas.back.ContatoTelEmail;
 import com.luisguilherme.sistemaclinicas.back.Endereco;
 import com.luisguilherme.sistemaclinicas.back.Genero;
 import com.luisguilherme.sistemaclinicas.back.Paciente;
+import com.luisguilherme.sistemaclinicas.back.Responsavel;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
+import java.util.ArrayList;
+import java.util.Collections;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -26,11 +30,22 @@ public class cadastrarPaciente extends CRUD_JPanel {
         super(cl, container, back);
         initComponents();
         loadId();
+        loadResponsaveis();
     }
     
     public void loadId(){
         //carrega o proximo id no campo bloqueado
         idField.setText(Long.toString(Paciente.getcountId()+ 1));
+    }
+    
+    @Override
+    public void loadResponsaveis(){
+        listResponsaveis.removeAll();
+        DefaultListModel<String> model = new DefaultListModel<>();
+        for(Responsavel r : getBack().getTempResponsaveis()){
+            model.addElement(r.getNomeResponsavel());  
+        }
+        listResponsaveis.setModel(model);
     }
     
     public boolean validar(){
@@ -62,6 +77,14 @@ public class cadastrarPaciente extends CRUD_JPanel {
        return true;
     }
     
+    public ArrayList<Responsavel> copyArrResp(ArrayList<Responsavel> arr){
+        ArrayList<Responsavel> temp = new ArrayList<Responsavel>();
+        for(Responsavel r : arr){
+            temp.add(r);
+        }
+        return temp;
+    }
+    
     public boolean cadastrar(){
         if(!validar()){
             JOptionPane.showMessageDialog(null, "Campo(s) Invalido(s)");
@@ -83,7 +106,10 @@ public class cadastrarPaciente extends CRUD_JPanel {
             celularField.getText(),
             emailField.getText());
 
-        //checo o genero selecionado e populo os demais campos
+        //checo o genero selecionado e populo os demais 
+        //copio o arraylist em um novo para evitar referencias de memoria
+        ArrayList<Responsavel> temp = copyArrResp(getBack().getTempResponsaveis());
+        
         if(generoComboBox.getSelectedIndex() == 0){
             Paciente pac = new Paciente(
                 Long.parseLong(idField.getText()),
@@ -92,7 +118,8 @@ public class cadastrarPaciente extends CRUD_JPanel {
                 nascimentoField.getDate(),
                 e,
                 c,
-                Genero.MASCULINO);
+                Genero.MASCULINO,
+                temp);
             getBack().getPacientes().add(pac);
 
         }
@@ -104,9 +131,11 @@ public class cadastrarPaciente extends CRUD_JPanel {
                 nascimentoField.getDate(),
                 e,
                 c,
-                Genero.FEMININO);
+                Genero.FEMININO,
+                temp);
             getBack().getPacientes().add(pac);
         }
+        getBack().getTempResponsaveis().clear();
         return true;
     }
 
@@ -155,10 +184,10 @@ public class cadastrarPaciente extends CRUD_JPanel {
         obsLabel = new javax.swing.JLabel();
         infoEspecificasLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        listResponsaveis = new javax.swing.JList<>();
+        addRespBtn = new javax.swing.JButton();
+        editRespBtn = new javax.swing.JButton();
+        deleteRespBtn = new javax.swing.JButton();
 
         nomeLabel.setText("Nome");
 
@@ -221,13 +250,18 @@ public class cadastrarPaciente extends CRUD_JPanel {
         infoEspecificasLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         infoEspecificasLabel1.setText("Responsaveis");
 
-        jScrollPane2.setViewportView(jList1);
+        jScrollPane2.setViewportView(listResponsaveis);
 
-        jButton1.setText("➕");
+        addRespBtn.setText("➕");
+        addRespBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addRespBtnActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("✎");
+        editRespBtn.setText("✎");
 
-        jButton3.setText("X");
+        deleteRespBtn.setText("X");
 
         javax.swing.GroupLayout cadastrarPacienteLayout = new javax.swing.GroupLayout(cadastrarPaciente);
         cadastrarPaciente.setLayout(cadastrarPacienteLayout);
@@ -273,9 +307,9 @@ public class cadastrarPaciente extends CRUD_JPanel {
                             .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                         .addGroup(cadastrarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(addRespBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editRespBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deleteRespBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(cadastrarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cadastrarPacienteLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
@@ -375,11 +409,11 @@ public class cadastrarPaciente extends CRUD_JPanel {
                         .addComponent(jScrollPane1))
                     .addGroup(cadastrarPacienteLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addComponent(jButton1)
+                        .addComponent(addRespBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(editRespBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3))
+                        .addComponent(deleteRespBtn))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
@@ -416,10 +450,17 @@ public class cadastrarPaciente extends CRUD_JPanel {
         getCl().show(getContainer(),"mainWindow");
     }//GEN-LAST:event_backBtnActionPerformed
 
+    private void addRespBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRespBtnActionPerformed
+        cadastrarResponsavel panel = new cadastrarResponsavel(getCl(), getContainer(), getBack(),"cadastraPaciente",this);
+        getContainer().add(panel, "cadastrarResponsavel");
+        getCl().show(getContainer(), "cadastrarResponsavel");
+    }//GEN-LAST:event_addRespBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CEPFieldl;
     private javax.swing.JLabel CEPLabel;
+    private javax.swing.JButton addRespBtn;
     private javax.swing.JButton backBtn;
     private javax.swing.JTextField bairroField;
     private javax.swing.JLabel bairroLabel;
@@ -428,6 +469,8 @@ public class cadastrarPaciente extends CRUD_JPanel {
     private javax.swing.JLabel celularLabel;
     private javax.swing.JTextField cidadeField;
     private javax.swing.JLabel cidadeLabel;
+    private javax.swing.JButton deleteRespBtn;
+    private javax.swing.JButton editRespBtn;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField estadoField;
@@ -439,12 +482,9 @@ public class cadastrarPaciente extends CRUD_JPanel {
     private javax.swing.JLabel infoEspecificasLabel;
     private javax.swing.JLabel infoEspecificasLabel1;
     private javax.swing.JLabel infoGeraisLabel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> listResponsaveis;
     private com.toedter.calendar.JDateChooser nascimentoField;
     private javax.swing.JLabel nascimentoLabel;
     private javax.swing.JTextField nomeField;

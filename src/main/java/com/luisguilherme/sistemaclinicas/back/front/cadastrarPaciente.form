@@ -91,9 +91,9 @@
                           </Group>
                           <EmptySpace pref="74" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton1" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
-                              <Component id="jButton2" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
-                              <Component id="jButton3" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
+                              <Component id="addRespBtn" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
+                              <Component id="editRespBtn" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
+                              <Component id="deleteRespBtn" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -220,11 +220,11 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="addRespBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="editRespBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="deleteRespBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane2" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                   </Group>
@@ -402,7 +402,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JList" name="jList1">
+            <Component class="javax.swing.JList" name="listResponsaveis">
               <Properties>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                   <StringArray count="0"/>
@@ -414,17 +414,20 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="addRespBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x2795;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addRespBtnActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="editRespBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x270e;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="deleteRespBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="X"/>
           </Properties>

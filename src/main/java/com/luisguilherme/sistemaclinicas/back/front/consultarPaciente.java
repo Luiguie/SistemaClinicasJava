@@ -8,8 +8,11 @@ import com.luisguilherme.sistemaclinicas.back.ContatoTelEmail;
 import com.luisguilherme.sistemaclinicas.back.Endereco;
 import com.luisguilherme.sistemaclinicas.back.Genero;
 import com.luisguilherme.sistemaclinicas.back.Paciente;
+import com.luisguilherme.sistemaclinicas.back.Responsavel;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JPanel;
 
 /**
@@ -32,6 +35,24 @@ public class consultarPaciente extends CRUD_JPanel {
         for(Paciente e : getBack().getPacientes()){
             selectionComboBox.addItem(e.getNomeCompleto());
         }
+    }
+    
+    @Override
+    public void loadResponsaveis(){
+        listResponsaveis.removeAll();
+        DefaultListModel<String> model = new DefaultListModel<>();
+        for(Responsavel r : getBack().getTempResponsaveis()){
+            model.addElement(r.getNomeResponsavel());  
+        }
+        listResponsaveis.setModel(model);
+    }
+    
+    public ArrayList<Responsavel> copyArrResp(ArrayList<Responsavel> arr){
+        ArrayList<Responsavel> temp = new ArrayList<Responsavel>();
+        for(Responsavel r : arr){
+            temp.add(r);
+        }
+        return temp;
     }
     
     public void loadInfo(int index){
@@ -68,6 +89,11 @@ public class consultarPaciente extends CRUD_JPanel {
         idadeField.setText(Integer.toString(p.getIdade()));
         obsTextArea.setText(p.getObsGeral());
         dataCadastroField.setDate(p.getDataCadastro());
+        
+        //carrego responsaveis
+        getBack().getTempResponsaveis().clear();
+        getBack().setTempResponsaveis(copyArrResp(p.getContatoResponsavel()));
+        loadResponsaveis();
              
             
     }
@@ -114,7 +140,7 @@ public class consultarPaciente extends CRUD_JPanel {
         obsLabel = new javax.swing.JLabel();
         infoEspecificasLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listResponsaveis = new javax.swing.JList<>();
         selectionComboBox = new javax.swing.JComboBox<>();
         selectionLabel = new javax.swing.JLabel();
         idadeLabel = new javax.swing.JLabel();
@@ -203,7 +229,7 @@ public class consultarPaciente extends CRUD_JPanel {
         infoEspecificasLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         infoEspecificasLabel1.setText("Responsaveis");
 
-        jScrollPane2.setViewportView(jList1);
+        jScrollPane2.setViewportView(listResponsaveis);
 
         selectionComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -417,9 +443,9 @@ public class consultarPaciente extends CRUD_JPanel {
     private javax.swing.JTextField idadeField;
     private javax.swing.JLabel idadeLabel;
     private javax.swing.JLabel infoEspecificasLabel1;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> listResponsaveis;
     private com.toedter.calendar.JDateChooser nascimentoField;
     private javax.swing.JLabel nascimentoLabel;
     private javax.swing.JTextField nomeField;

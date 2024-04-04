@@ -115,7 +115,7 @@ public class deletarPaciente extends CRUD_JPanel {
         obsLabel = new javax.swing.JLabel();
         infoEspecificasLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listResponsaveis = new javax.swing.JList<>();
         selectionComboBox = new javax.swing.JComboBox<>();
         selectionLabel = new javax.swing.JLabel();
         idadeLabel = new javax.swing.JLabel();
@@ -205,7 +205,7 @@ public class deletarPaciente extends CRUD_JPanel {
         infoEspecificasLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         infoEspecificasLabel1.setText("Responsaveis");
 
-        jScrollPane2.setViewportView(jList1);
+        jScrollPane2.setViewportView(listResponsaveis);
 
         selectionComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -441,9 +441,9 @@ public class deletarPaciente extends CRUD_JPanel {
     private javax.swing.JTextField idadeField;
     private javax.swing.JLabel idadeLabel;
     private javax.swing.JLabel infoEspecificasLabel1;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> listResponsaveis;
     private com.toedter.calendar.JDateChooser nascimentoField;
     private javax.swing.JLabel nascimentoLabel;
     private javax.swing.JTextField nomeField;

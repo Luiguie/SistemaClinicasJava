@@ -75,13 +75,17 @@ public class CRUD_JPanel extends javax.swing.JPanel{
         
        
         try{
-            System.out.println("aa" + dc.getDate());
+            dc.getDate().getTime();
             return true;
         }
         catch(Exception e){
             return false;
         }
             
+        
+    }
+    
+    public void loadResponsaveis(){
         
     }
     

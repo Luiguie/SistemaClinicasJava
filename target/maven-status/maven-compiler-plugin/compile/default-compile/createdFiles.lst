@@ -15,10 +15,12 @@ com\luisguilherme\sistemaclinicas\back\front\GUI$11.class
 com\luisguilherme\sistemaclinicas\back\front\deletarEnfermeiro$2.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$9.class
 com\luisguilherme\sistemaclinicas\back\front\deletarMedico.class
+com\luisguilherme\sistemaclinicas\back\front\cadastrarResponsavel$2.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$17.class
 com\luisguilherme\sistemaclinicas\back\front\GUI.class
 com\luisguilherme\sistemaclinicas\back\front\consultarMedico$2.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$1.class
+com\luisguilherme\sistemaclinicas\back\front\cadastrarResponsavel.class
 com\luisguilherme\sistemaclinicas\back\Endereco.class
 com\luisguilherme\sistemaclinicas\back\front\consultarPaciente$2.class
 com\luisguilherme\sistemaclinicas\back\front\editarMedico.class
@@ -31,6 +33,7 @@ com\luisguilherme\sistemaclinicas\back\front\cadastrarEnfermeiroPanel$2.class
 com\luisguilherme\sistemaclinicas\back\Paciente.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$4.class
 com\luisguilherme\sistemaclinicas\back\front\editarPaciente.class
+com\luisguilherme\sistemaclinicas\back\front\cadastrarResponsavel$1.class
 com\luisguilherme\sistemaclinicas\back\Responsavel.class
 com\luisguilherme\sistemaclinicas\back\front\consultarMedico$1.class
 com\luisguilherme\sistemaclinicas\back\front\cadastrarPaciente$1.class
@@ -68,5 +71,6 @@ com\luisguilherme\sistemaclinicas\back\front\deletarMedico$3.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$2.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$10.class
 com\luisguilherme\sistemaclinicas\back\front\editarPaciente$2.class
+com\luisguilherme\sistemaclinicas\back\front\cadastrarPaciente$3.class
 com\luisguilherme\sistemaclinicas\back\front\cadastrarMedico$1.class
 com\luisguilherme\sistemaclinicas\back\front\editarEnfermeiroPanel$2.class

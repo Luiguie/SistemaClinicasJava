@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 public class Paciente extends DadoPessoal{
+    
     private long idPaciente;
     private static long countId=0;
     private int idade;
@@ -81,13 +82,16 @@ public class Paciente extends DadoPessoal{
         this.contatoResponsavel = contatoResponsavel;
     }
 
-    public Paciente(long idPaciente, String obsGeral, String nomeCompleto, Date dataNascimento, Endereco endereco, ContatoTelEmail contato, Genero genero) {
+    public Paciente(long idPaciente, String obsGeral, String nomeCompleto, 
+            Date dataNascimento, Endereco endereco, 
+            ContatoTelEmail contato, Genero genero, ArrayList<Responsavel> contatoResponsavel) {
         super(nomeCompleto, dataNascimento, endereco, contato, genero);
         //inicializa data com a data atual
         this.dataCadastro = new Date();
         this.idPaciente = idPaciente;
         setIdade(dataNascimento);
         this.obsGeral = obsGeral;
+        this.contatoResponsavel = contatoResponsavel;
         countId+=1;
     }
     
