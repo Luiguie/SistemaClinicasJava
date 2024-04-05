@@ -374,6 +374,9 @@ public class editarConsultaMed extends CRUD_JPanel {
                 getCl().show(getContainer(),"mainWindow");
             }
         }
+        else{
+            JOptionPane.showMessageDialog(null, "Sem Consultas");
+        }
         
     }//GEN-LAST:event_editarBtnActionPerformed
 

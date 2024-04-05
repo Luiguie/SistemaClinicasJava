@@ -10,6 +10,7 @@ package com.luisguilherme.sistemaclinicas.back.front;
  */
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 public class GUI extends javax.swing.JFrame {
 
     private CardLayout cl;
@@ -324,21 +325,33 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_cadPacienteActionPerformed
 
     private void consPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consPacienteActionPerformed
-        consultarPaciente panel = new consultarPaciente(cl, container, back);
-        container.add(panel, "consultaPaciente");
-        cl.show(container, "consultaPaciente");
+        if(!back.getPacientes().isEmpty()){
+            consultarPaciente panel = new consultarPaciente(cl, container, back);
+            container.add(panel, "consultaPaciente");
+            cl.show(container, "consultaPaciente");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Sem Usuarios Cadastrados");
     }//GEN-LAST:event_consPacienteActionPerformed
 
     private void editPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPacienteActionPerformed
-        editarPaciente panel = new editarPaciente(cl, container, back);
-        container.add(panel, "editarPaciente");
-        cl.show(container, "editarPaciente");
+        if(!back.getPacientes().isEmpty()){
+            editarPaciente panel = new editarPaciente(cl, container, back);
+            container.add(panel, "editarPaciente");
+            cl.show(container, "editarPaciente");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Sem Usuarios Cadastrados");
     }//GEN-LAST:event_editPacienteActionPerformed
 
     private void remPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remPacienteActionPerformed
-        deletarPaciente panel = new deletarPaciente(cl, container, back);
-        container.add(panel, "deletarPaciente");
-        cl.show(container, "deletarPaciente");
+        if(!back.getPacientes().isEmpty()){
+            deletarPaciente panel = new deletarPaciente(cl, container, back);
+            container.add(panel, "deletarPaciente");
+            cl.show(container, "deletarPaciente");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Sem Usuarios Cadastrados");
     }//GEN-LAST:event_remPacienteActionPerformed
 
     private void cadMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadMedicoActionPerformed
@@ -348,21 +361,33 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_cadMedicoActionPerformed
 
     private void consMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consMedicoActionPerformed
-        consultarMedico panel = new consultarMedico(cl, container, back);
-        container.add(panel, "consultaMedico");
-        cl.show(container, "consultaMedico");
+        if(!back.getMedicos().isEmpty()){
+            consultarMedico panel = new consultarMedico(cl, container, back);
+            container.add(panel, "consultaMedico");
+            cl.show(container, "consultaMedico");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Sem Usuarios Cadastrados");
     }//GEN-LAST:event_consMedicoActionPerformed
 
     private void editMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editMedicoActionPerformed
-        editarMedico panel = new editarMedico(cl, container, back);
-        container.add(panel, "editaMedico");
-        cl.show(container, "editaMedico");
+        if(!back.getMedicos().isEmpty()){
+            editarMedico panel = new editarMedico(cl, container, back);
+            container.add(panel, "editaMedico");
+            cl.show(container, "editaMedico");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Sem Usuarios Cadastrados");
     }//GEN-LAST:event_editMedicoActionPerformed
 
     private void remMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remMedicoActionPerformed
-        deletarMedico panel = new deletarMedico(cl, container, back);
-        container.add(panel, "deletaMedico");
-        cl.show(container, "deletaMedico");
+        if(!back.getMedicos().isEmpty()){
+            deletarMedico panel = new deletarMedico(cl, container, back);
+            container.add(panel, "deletaMedico");
+            cl.show(container, "deletaMedico");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Sem Usuarios Cadastrados");
     }//GEN-LAST:event_remMedicoActionPerformed
 
     private void cadEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadEnfermeiroActionPerformed
@@ -372,27 +397,48 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_cadEnfermeiroActionPerformed
 
     private void consEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consEnfermeiroActionPerformed
-        consultarEnfermeiroPanel panel = new consultarEnfermeiroPanel(cl, container, back);
-        container.add(panel, "consultaEnfermeiro");
-        cl.show(container, "consultaEnfermeiro");
+        if(!back.getEnfermeiros().isEmpty()){
+            consultarEnfermeiroPanel panel = new consultarEnfermeiroPanel(cl, container, back);
+            container.add(panel, "consultaEnfermeiro");
+            cl.show(container, "consultaEnfermeiro");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Sem Usuarios Cadastrados");
     }//GEN-LAST:event_consEnfermeiroActionPerformed
 
     private void editEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEnfermeiroActionPerformed
-        editarEnfermeiroPanel panel = new editarEnfermeiroPanel(cl, container, back);
-        container.add(panel, "editaEnfermeiro");
-        cl.show(container, "editaEnfermeiro");
+        if(!back.getEnfermeiros().isEmpty()){
+            editarEnfermeiroPanel panel = new editarEnfermeiroPanel(cl, container, back);
+            container.add(panel, "editaEnfermeiro");
+            cl.show(container, "editaEnfermeiro");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Sem Usuarios Cadastrados");
     }//GEN-LAST:event_editEnfermeiroActionPerformed
 
     private void remEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remEnfermeiroActionPerformed
-        deletarEnfermeiro panel = new deletarEnfermeiro(cl, container, back);
-        container.add(panel, "deletaEnfermeiro");
-        cl.show(container, "deletaEnfermeiro");
+        if(!back.getEnfermeiros().isEmpty()){
+            deletarEnfermeiro panel = new deletarEnfermeiro(cl, container, back);
+            container.add(panel, "deletaEnfermeiro");
+            cl.show(container, "deletaEnfermeiro");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Sem Usuarios Cadastrados");
     }//GEN-LAST:event_remEnfermeiroActionPerformed
 
     private void cadConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadConsultasActionPerformed
-        cadastrarConsultaMed panel = new cadastrarConsultaMed(cl, container, back);
-        container.add(panel, "cadastrarConsultaMed");
-        cl.show(container, "cadastrarConsultaMed");
+        if(back.getPacientes().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Sem Pacientes Cadastrados");
+        }
+        else if(back.getMedicos().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Sem Medicos Cadastrados");
+        }
+        else{
+            cadastrarConsultaMed panel = new cadastrarConsultaMed(cl, container, back);
+            container.add(panel, "cadastrarConsultaMed");
+            cl.show(container, "cadastrarConsultaMed");
+        }
+        
     }//GEN-LAST:event_cadConsultasActionPerformed
 
     private void consConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consConsultasActionPerformed

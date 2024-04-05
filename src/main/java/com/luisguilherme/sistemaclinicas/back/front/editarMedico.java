@@ -304,6 +304,9 @@ public class editarMedico extends CRUD_JPanel {
 
         chLabel.setText("Carga Horaria Semanal");
 
+        idField.setEditable(false);
+        idField.setFocusable(false);
+
         idLabel.setText("Id Medico");
 
         backBtn.setText("<----");
@@ -392,14 +395,13 @@ public class editarMedico extends CRUD_JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(editarMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(editBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(editarMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(telefoneLabel)
-                        .addComponent(telefoneField)
-                        .addComponent(celularLabel)
-                        .addComponent(celularField)
-                        .addComponent(emailLabel)
-                        .addComponent(emailField)
-                        .addComponent(generoComboBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, 170, Short.MAX_VALUE))
+                    .addComponent(telefoneLabel)
+                    .addComponent(telefoneField)
+                    .addComponent(celularLabel)
+                    .addComponent(celularField)
+                    .addComponent(emailLabel)
+                    .addComponent(emailField)
+                    .addComponent(generoComboBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(generoLabel)
                     .addComponent(crmLabel)
                     .addComponent(crmField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)

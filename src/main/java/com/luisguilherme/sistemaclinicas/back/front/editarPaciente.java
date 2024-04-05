@@ -291,6 +291,9 @@ public class editarPaciente extends CRUD_JPanel {
         infoEspecificasLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         infoEspecificasLabel.setText("Informações Especificas");
 
+        idField.setEditable(false);
+        idField.setFocusable(false);
+
         idLabel.setText("Id Paciente");
 
         backBtn.setText("<----");
