@@ -6,7 +6,6 @@ package com.luisguilherme.sistemaclinicas.back.front;
 
 import com.luisguilherme.sistemaclinicas.back.ContatoTelEmail;
 import com.luisguilherme.sistemaclinicas.back.Endereco;
-import com.luisguilherme.sistemaclinicas.back.Enfermeiro;
 import com.luisguilherme.sistemaclinicas.back.Genero;
 import com.luisguilherme.sistemaclinicas.back.Medico;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;

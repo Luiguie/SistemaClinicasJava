@@ -7,7 +7,6 @@ package com.luisguilherme.sistemaclinicas.back.front;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import com.toedter.calendar.JDateChooser;
 import java.awt.CardLayout;
-import java.util.Date;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;

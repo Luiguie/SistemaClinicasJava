@@ -4,14 +4,11 @@
  */
 package com.luisguilherme.sistemaclinicas.back.front;
 
-import com.luisguilherme.sistemaclinicas.back.ContatoTelEmail;
-import com.luisguilherme.sistemaclinicas.back.Paciente;
 import com.luisguilherme.sistemaclinicas.back.Responsavel;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 /**
  *

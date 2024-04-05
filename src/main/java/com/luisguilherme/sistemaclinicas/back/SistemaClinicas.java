@@ -17,6 +17,8 @@ public class SistemaClinicas {
     private ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
     private ArrayList<Responsavel> tempResponsaveis = new ArrayList<Responsavel>();
     
+    private ExportarExcel excelHandler = new ExportarExcel(medicos, pacientes, enfermeiros);
+    
     public ArrayList<Enfermeiro> getEnfermeiros() {
         return enfermeiros;
     }
@@ -48,5 +50,15 @@ public class SistemaClinicas {
     public void setTempResponsaveis(ArrayList<Responsavel> tempResponsaveis) {
         this.tempResponsaveis = tempResponsaveis;
     }
+
+    public ExportarExcel getExcelHandler() {
+        return excelHandler;
+    }
+
+    public void setExcelHandler(ExportarExcel excelHandler) {
+        this.excelHandler = excelHandler;
+    }
+    
+    
     
 }

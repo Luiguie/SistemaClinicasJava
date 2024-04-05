@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.luisguilherme.sistemaclinicas.back.front;
-
-import com.luisguilherme.sistemaclinicas.back.ContatoTelEmail;
 import com.luisguilherme.sistemaclinicas.back.Responsavel;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;

@@ -10,7 +10,6 @@ import com.luisguilherme.sistemaclinicas.back.Enfermeiro;
 import com.luisguilherme.sistemaclinicas.back.Genero;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
-import java.time.ZoneId;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 

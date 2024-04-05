@@ -12,7 +12,6 @@ import com.luisguilherme.sistemaclinicas.back.Responsavel;
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
 import java.util.ArrayList;
-import java.util.Collections;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;

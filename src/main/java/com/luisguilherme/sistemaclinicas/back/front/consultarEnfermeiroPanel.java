@@ -10,7 +10,6 @@ import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import com.luisguilherme.sistemaclinicas.back.ContatoTelEmail;
 import com.luisguilherme.sistemaclinicas.back.Genero;
 import java.awt.CardLayout;
-import java.time.ZoneId;
 import javax.swing.JPanel;
 
 /**
