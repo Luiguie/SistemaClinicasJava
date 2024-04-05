@@ -489,6 +489,7 @@ public class editarEnfermeiroPanel extends CRUD_JPanel {
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         getCl().show(getContainer(),"mainWindow");
+        getContainer().remove(this);
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void selectionComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectionComboBoxActionPerformed
@@ -501,6 +502,7 @@ public class editarEnfermeiroPanel extends CRUD_JPanel {
         int index = selectionComboBox.getSelectedIndex();
         if(editarInfo(index)){
             getCl().show(getContainer(),"mainWindow");
+            getContainer().remove(this);
         }
         
     }//GEN-LAST:event_editBtnActionPerformed

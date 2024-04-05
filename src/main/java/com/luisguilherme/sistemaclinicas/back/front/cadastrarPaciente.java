@@ -489,12 +489,14 @@ public class cadastrarPaciente extends CRUD_JPanel {
 
         if(cadastrar()){
             getCl().show(getContainer(),"mainWindow");
+            getContainer().remove(this);
         }
     }//GEN-LAST:event_salvarBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         getBack().getTempResponsaveis().clear();
         getCl().show(getContainer(),"mainWindow");
+        getContainer().remove(this);
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void addRespBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRespBtnActionPerformed

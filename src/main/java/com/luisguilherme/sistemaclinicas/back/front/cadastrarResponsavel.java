@@ -220,12 +220,14 @@ public class cadastrarResponsavel extends CRUD_JPanel {
         if(cadastrar()){
             parent.loadResponsaveis();
             getCl().show(getContainer(),previousWindown);
+            getContainer().remove(this);
         }
     }//GEN-LAST:event_salvarBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
 
         getCl().show(getContainer(),previousWindown);
+        getContainer().remove(this);
     }//GEN-LAST:event_backBtnActionPerformed
 
 

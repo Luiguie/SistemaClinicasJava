@@ -219,6 +219,7 @@ public class editarResponsavel extends CRUD_JPanel {
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
 
         getCl().show(getContainer(),previousWindown);
+        getContainer().remove(this);
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void editarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarBtnActionPerformed
@@ -226,6 +227,7 @@ public class editarResponsavel extends CRUD_JPanel {
         if(editarInfo()){
             parent.loadResponsaveis();
             getCl().show(getContainer(),previousWindown);
+            getContainer().remove(this);
         }
     }//GEN-LAST:event_editarBtnActionPerformed
 

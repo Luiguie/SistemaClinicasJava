@@ -465,6 +465,7 @@ public class deletarMedico extends CRUD_JPanel {
         }
         
         getCl().show(getContainer(),"mainWindow");
+        getContainer().remove(this);
     }//GEN-LAST:event_deletarBtnActionPerformed
 
 

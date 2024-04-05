@@ -350,6 +350,7 @@ public class editarConsultaMed extends CRUD_JPanel {
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
 
         getCl().show(getContainer(),"mainWindow");
+        getContainer().remove(this);
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void selecPacienteComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selecPacienteComboBoxActionPerformed
@@ -372,6 +373,7 @@ public class editarConsultaMed extends CRUD_JPanel {
         if(index != -1){
             if(editarInfo(index)){
                 getCl().show(getContainer(),"mainWindow");
+                getContainer().remove(this);
             }
         }
         else{
