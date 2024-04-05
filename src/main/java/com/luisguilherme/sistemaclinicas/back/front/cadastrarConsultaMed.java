@@ -50,12 +50,19 @@ public class cadastrarConsultaMed extends CRUD_JPanel {
     public boolean validar(){
         //valida todos os campos presentes no Jpanel e retorna falso caso algum
         //esteja invalido
-        if(!validarCampo(diagnosticoField))
+        Validador v = new Validador();
+        if(!v.validarCampo(diagnosticoField)){
+            JOptionPane.showMessageDialog(null, "Diagnostico Invalido");
             return false;
-        if(!validarCampo(prescricaoTextArea))
+        }
+        if(!v.validarCampo(prescricaoTextArea)){
+            JOptionPane.showMessageDialog(null, "Prescrição Invalida");
             return false;
-        if(!validarCampo(queixasTextArea))
+        }
+        if(!v.validarCampo(queixasTextArea)){
+            JOptionPane.showMessageDialog(null, "Queixas Invalidas");
             return false;
+        }
         
        return true;
     }
@@ -63,7 +70,6 @@ public class cadastrarConsultaMed extends CRUD_JPanel {
     public boolean cadastrar(){
         //valido
         if(!validar()){
-            JOptionPane.showMessageDialog(null, "Campo(s) Invalido(s)");
             return false;
         }
         //pego o id dos medicos e pacientes selecionados

@@ -90,12 +90,19 @@ public class editarConsultaMed extends CRUD_JPanel {
     public boolean validar(){
         //valida todos os campos presentes no Jpanel e retorna falso caso algum
         //esteja invalido
-        if(!validarCampo(diagnosticoField))
+        Validador v = new Validador();
+        if(!v.validarCampo(diagnosticoField)){
+            JOptionPane.showMessageDialog(null, "Diagnostico Invalido");
             return false;
-        if(!validarCampo(prescricaoTextArea))
+        }
+        if(!v.validarCampo(prescricaoTextArea)){
+            JOptionPane.showMessageDialog(null, "Prescrição Invalida");
             return false;
-        if(!validarCampo(queixasTextArea))
+        }
+        if(!v.validarCampo(queixasTextArea)){
+            JOptionPane.showMessageDialog(null, "Queixas Invalidas");
             return false;
+        }
         
        return true;
     }
@@ -103,7 +110,6 @@ public class editarConsultaMed extends CRUD_JPanel {
     public boolean editarInfo(int index){
         //valido
         if(!validar()){
-            JOptionPane.showMessageDialog(null, "Campo(s) Invalido(s)");
             return false;
         }
         //pego o id dos medicos e pacientes selecionados
@@ -364,8 +370,9 @@ public class editarConsultaMed extends CRUD_JPanel {
     private void editarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarBtnActionPerformed
         int index = selecConsultaComboBox.getSelectedIndex();
         if(index != -1){
-            editarInfo(index);
-            getCl().show(getContainer(),"mainWindow");
+            if(editarInfo(index)){
+                getCl().show(getContainer(),"mainWindow");
+            }
         }
         
     }//GEN-LAST:event_editarBtnActionPerformed

@@ -51,30 +51,51 @@ public class cadastrarPaciente extends CRUD_JPanel {
     public boolean validar(){
         //valida todos os campos presentes no Jpanel e retorna falso caso algum
         //esteja invalido
-        if(!validarCampo(ruaField))
+        Validador v = new Validador();
+        if(!v.validarCampo(nomeField)){
+            JOptionPane.showMessageDialog(null, "Nome Invalido");
             return false;
-        if(!validarNum(numeroField))
+        }
+        if(!v.validarCampo(bairroField)){
+            JOptionPane.showMessageDialog(null, "Bairro Invalido");
             return false;
-        if(!validarCampo(bairroField))
+        }
+        if(!v.validarCampo(telefoneField)){
+            JOptionPane.showMessageDialog(null, "Telefone Invalido");
             return false;
-        if(!validarCampo(cidadeField))
+        }
+        if(!v.validarData(nascimentoField)){
+            JOptionPane.showMessageDialog(null, "Data de Nascimento Invalida");
             return false;
-        if(!validarCampo(estadoField))
+        }
+        if(!v.validarCampo(estadoField)){
+            JOptionPane.showMessageDialog(null, "Estado Invalido");
             return false;
-        if(!validarNum(CEPFieldl))
+        }
+        if(!v.validarCampo(celularField)){
+            JOptionPane.showMessageDialog(null, "Celular Invalido");
             return false;
-        if(!validarCampo(telefoneField))
+        }
+        if(!v.validarCampo(ruaField)){
+            JOptionPane.showMessageDialog(null, "Rua Invalida");
             return false;
-        if(!validarCampo(celularField))
+        }
+        if(!v.validarCampo(cidadeField)){
+            JOptionPane.showMessageDialog(null, "Cidade Invalida");
             return false;
-        if(!validarEmail(emailField))
+        }
+        if(!v.validarEmail(emailField)){
+            JOptionPane.showMessageDialog(null, "Email Invalido");
             return false;
-        //if(!validarData(nascimentoField))
-        //    return false;
-        if(!validarCampo(nomeField))
+        }
+        if(!v.validarNum(numeroField)){
+            JOptionPane.showMessageDialog(null, "Numero Invalido");
             return false;
-        if(!validarCampo(obsTextArea))
+        }
+        if(!v.validarNum(CEPFieldl)){
+            JOptionPane.showMessageDialog(null, "CEP Invalido");
             return false;
+        }
         
        return true;
     }
@@ -89,7 +110,6 @@ public class cadastrarPaciente extends CRUD_JPanel {
     
     public boolean cadastrar(){
         if(!validar()){
-            JOptionPane.showMessageDialog(null, "Campo(s) Invalido(s)");
             return false;
         }
             

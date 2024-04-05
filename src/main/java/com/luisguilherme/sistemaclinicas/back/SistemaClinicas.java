@@ -16,7 +16,7 @@ public class SistemaClinicas {
     private ArrayList<Medico> medicos = new ArrayList<Medico>();
     private ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
     private ArrayList<Responsavel> tempResponsaveis = new ArrayList<Responsavel>();
-
+    
     public ArrayList<Enfermeiro> getEnfermeiros() {
         return enfermeiros;
     }
@@ -48,9 +48,5 @@ public class SistemaClinicas {
     public void setTempResponsaveis(ArrayList<Responsavel> tempResponsaveis) {
         this.tempResponsaveis = tempResponsaveis;
     }
-    
-    
-    
-    
     
 }

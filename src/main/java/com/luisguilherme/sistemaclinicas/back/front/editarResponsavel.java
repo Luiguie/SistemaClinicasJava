@@ -46,14 +46,23 @@ public class editarResponsavel extends CRUD_JPanel {
     public boolean validar(){
         //valida todos os campos presentes no Jpanel e retorna falso caso algum
         //esteja invalido
-        if(!validarCampo(telefoneField))
+        Validador v = new Validador();
+        if(!v.validarCampo(nomeField)){
+            JOptionPane.showMessageDialog(null, "Nome Invalido");
             return false;
-        if(!validarCampo(celularField))
+        }
+        if(!v.validarCampo(telefoneField)){
+            JOptionPane.showMessageDialog(null, "Telefone Invalido");
             return false;
-        if(!validarEmail(emailField))
+        }
+        if(!v.validarCampo(celularField)){
+            JOptionPane.showMessageDialog(null, "Celular Invalido");
             return false;
-        if(!validarCampo(nomeField))
+        }
+        if(!v.validarEmail(emailField)){
+            JOptionPane.showMessageDialog(null, "Email Invalido");
             return false;
+        }
         
        return true;
     }
