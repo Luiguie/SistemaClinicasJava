@@ -402,11 +402,15 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_consConsultasActionPerformed
 
     private void editConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editConsultasActionPerformed
-        // TODO add your handling code here:
+        editarConsultaMed panel = new editarConsultaMed(cl, container, back);
+        container.add(panel, "editarConsultaMed");
+        cl.show(container, "editarConsultaMed");
     }//GEN-LAST:event_editConsultasActionPerformed
 
     private void remConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remConsultasActionPerformed
-        // TODO add your handling code here:
+        deletarConsultaMed panel = new deletarConsultaMed(cl, container, back);
+        container.add(panel, "deletarConsultaMed");
+        cl.show(container, "deletarConsultaMed");
     }//GEN-LAST:event_remConsultasActionPerformed
 
     /**
