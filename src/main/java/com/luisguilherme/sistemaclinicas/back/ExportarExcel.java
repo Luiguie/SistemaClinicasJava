@@ -69,9 +69,7 @@ public class ExportarExcel {
         this.enfermeiros = enfermeiros;
     }
     
-    
-    
-    public void exportar(String exportName) throws IOException {
+    public void exportar(String exportPath) throws IOException {
         //crio workbook e worksheet
         XSSFWorkbook book = new XSSFWorkbook();
         XSSFSheet enfermeiroSheet = book.createSheet("Enfermeiros");
@@ -80,13 +78,15 @@ public class ExportarExcel {
         XSSFSheet responsaveisSheet = book.createSheet("Responsaveis");
         XSSFSheet consultaSheet = book.createSheet("Consultas Medicas");
 
+        //gravo nas sheets
         gravarEnfermeiros(enfermeiroSheet);
         gravarMedico(medicosSheet);
         gravarPaciente(pacientesSheet);
         gravarResponsavel(responsaveisSheet);
         gravarConsultas(consultaSheet);
         
-        Path filePath = Paths.get("C:\\Users\\Guilg\\Downloads\\" + exportName + ".xlsx");
+        exportPath.replace("\\", "\\\\");
+        Path filePath = Paths.get(exportPath + ".xlsx");
         try (OutputStream outputStream = Files.newOutputStream(filePath)) {
           book.write(outputStream);
         }

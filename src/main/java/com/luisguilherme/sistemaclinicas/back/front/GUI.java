@@ -468,14 +468,9 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_remConsultasActionPerformed
 
     private void ExportExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportExcelActionPerformed
-        try{
-            back.getExportadorExcel().exportar("Nome_Legal");
-            JOptionPane.showMessageDialog(null, "Gravação Concluida");
-        }
-        catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Erro na gravação");
-        }
+        menuExcel panel = new menuExcel(cl, container, back);
+        container.add(panel, "menuExcel");
+        cl.show(container, "menuExcel");
         
     }//GEN-LAST:event_ExportExcelActionPerformed
 
