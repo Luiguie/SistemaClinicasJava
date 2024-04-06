@@ -51,6 +51,7 @@ com\luisguilherme\sistemaclinicas\back\front\CRUD_JPanel.class
 com\luisguilherme\sistemaclinicas\back\front\consultarEnfermeiroPanel.class
 com\luisguilherme\sistemaclinicas\back\front\menuExcel.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$10.class
+com\luisguilherme\sistemaclinicas\back\ImportarExcel.class
 com\luisguilherme\sistemaclinicas\back\front\cadastrarPaciente$3.class
 com\luisguilherme\sistemaclinicas\back\front\editarPaciente$5.class
 com\luisguilherme\sistemaclinicas\back\front\editarEnfermeiroPanel$2.class
@@ -82,6 +83,7 @@ com\luisguilherme\sistemaclinicas\back\front\editarPaciente.class
 com\luisguilherme\sistemaclinicas\back\front\editarConsultaMed$4.class
 com\luisguilherme\sistemaclinicas\back\front\consultarConsultaMedica$1.class
 com\luisguilherme\sistemaclinicas\back\front\consultarMedico$1.class
+com\luisguilherme\sistemaclinicas\back\front\menuExcel$5.class
 com\luisguilherme\sistemaclinicas\back\ConsultaMedica.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$18.class
 com\luisguilherme\sistemaclinicas\back\front\editarResponsavel$1.class
@@ -99,6 +101,7 @@ com\luisguilherme\sistemaclinicas\back\front\cadastrarConsultaMed$1.class
 com\luisguilherme\sistemaclinicas\back\front\editarPaciente$1.class
 com\luisguilherme\sistemaclinicas\back\front\consultarResponsavel.class
 com\luisguilherme\sistemaclinicas\back\front\consultarPaciente$3.class
+com\luisguilherme\sistemaclinicas\back\front\menuExcel$4.class
 com\luisguilherme\sistemaclinicas\back\front\deletarPaciente$1.class
 com\luisguilherme\sistemaclinicas\back\front\GUI$13.class
 com\luisguilherme\sistemaclinicas\back\front\editarMedico$2.class

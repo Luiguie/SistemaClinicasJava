@@ -63,6 +63,7 @@ public class GUI extends javax.swing.JFrame {
         labelMedico = new javax.swing.JLabel();
         remMedico = new javax.swing.JButton();
         ExportExcel = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(815, 584));
@@ -206,10 +207,6 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(65, 65, 65)
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainWindowLayout.createSequentialGroup()
-                        .addGap(273, 273, 273)
-                        .addComponent(ExportExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(mainWindowLayout.createSequentialGroup()
                         .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(mainWindowLayout.createSequentialGroup()
                                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,7 +259,16 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(editConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(remConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(85, 85, 85))))
+                        .addGap(85, 85, 85))
+                    .addGroup(mainWindowLayout.createSequentialGroup()
+                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainWindowLayout.createSequentialGroup()
+                                .addGap(273, 273, 273)
+                                .addComponent(ExportExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(mainWindowLayout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         mainWindowLayout.setVerticalGroup(
             mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,7 +295,9 @@ public class GUI extends javax.swing.JFrame {
                         .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(editMedico)
                             .addComponent(remMedico))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelConsultas)
                     .addComponent(labelEnfermeiro))
@@ -525,6 +533,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton editEnfermeiro;
     private javax.swing.JButton editMedico;
     private javax.swing.JButton editPaciente;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelConsultas;
     private javax.swing.JLabel labelEnfermeiro;
     private javax.swing.JLabel labelMedico;

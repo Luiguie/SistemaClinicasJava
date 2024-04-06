@@ -49,7 +49,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                          <Component id="caminhoLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="caminhoLabelExport" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -66,13 +66,23 @@
                       <Component id="nomeLabel" min="-2" max="-2" attributes="0"/>
                       <Component id="nomeField" alignment="0" min="-2" pref="427" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="caminhoField" min="-2" pref="383" max="-2" attributes="0"/>
+                          <Component id="caminhoFieldExport" min="-2" pref="383" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="caminhoBtn" max="32767" attributes="0"/>
+                          <Component id="caminhoBtnExport" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="caminhoLabelImport" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="caminhoFieldImport" min="-2" pref="383" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="caminhoBtnImport" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="importLabel" alignment="1" min="-2" pref="190" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                  <Component id="exportBtn" min="-2" pref="211" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="exportBtn" min="-2" pref="211" max="-2" attributes="0"/>
+                      <Component id="importBtn" min="-2" pref="211" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -91,13 +101,13 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="caminhoLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="caminhoLabelExport" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="caminhoField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="caminhoBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="caminhoFieldExport" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="caminhoBtnExport" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Component id="nomeLabel" min="-2" max="-2" attributes="0"/>
@@ -106,13 +116,30 @@
                       </Group>
                       <Component id="exportBtn" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="426" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                  <Component id="importLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Component id="caminhoLabelImport" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="caminhoFieldImport" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="caminhoBtnImport" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="importBtn" pref="75" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="caminhoLabel">
+        <Component class="javax.swing.JLabel" name="caminhoLabelExport">
           <Properties>
             <Property name="text" type="java.lang.String" value="Caminho"/>
           </Properties>
@@ -138,17 +165,17 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="caminhoField">
+        <Component class="javax.swing.JTextField" name="caminhoFieldExport">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="caminhoBtn">
+        <Component class="javax.swing.JButton" name="caminhoBtnExport">
           <Properties>
             <Property name="text" type="java.lang.String" value="\ud83d\udcc1" containsInvalidXMLChars="true"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="caminhoBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="caminhoBtnExportActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="exportBtn">
@@ -157,6 +184,39 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exportBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="caminhoFieldImport">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="caminhoLabelImport">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Caminho"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="caminhoBtnImport">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="\ud83d\udcc1" containsInvalidXMLChars="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="caminhoBtnImportActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="importLabel">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Importar"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="importBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="IMPORTAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="importBtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

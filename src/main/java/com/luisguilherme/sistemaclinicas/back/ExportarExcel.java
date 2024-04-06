@@ -95,7 +95,7 @@ public class ExportarExcel {
     
     private void gravarEnfermeiros(XSSFSheet sheet){
         //inicio cabecalho
-        String[] cabecalho = {"ID","Nome","Rua","Numero","Bairro",
+        String[] cabecalho = {"ID","Nome","Data de Nascimentos","Rua","Numero","Bairro",
             "Cidade","Estado","CEP","Telefone","Celular","Email","Genero",
             "Setor","Carga Horaria","Treinado em Raio X?"};
         
@@ -110,26 +110,27 @@ public class ExportarExcel {
             
             row.createCell(0).setCellValue(e.getIdEnfermeiro());
             row.createCell(1).setCellValue(e.getNomeCompleto());
-            row.createCell(2).setCellValue(e.getEndereco().getRua());
-            row.createCell(3).setCellValue(e.getEndereco().getNumero());
-            row.createCell(4).setCellValue(e.getEndereco().getBairro());
-            row.createCell(5).setCellValue(e.getEndereco().getCidade());
-            row.createCell(6).setCellValue(e.getEndereco().getEstado());
-            row.createCell(7).setCellValue(e.getEndereco().getCep());
-            row.createCell(8).setCellValue(e.getContato().getTelefone());
-            row.createCell(9).setCellValue(e.getContato().getCelular());
-            row.createCell(10).setCellValue(e.getContato().getEmail());
+            row.createCell(2).setCellValue(e.getDataNascimento());
+            row.createCell(3).setCellValue(e.getEndereco().getRua());
+            row.createCell(4).setCellValue(e.getEndereco().getNumero());
+            row.createCell(5).setCellValue(e.getEndereco().getBairro());
+            row.createCell(6).setCellValue(e.getEndereco().getCidade());
+            row.createCell(7).setCellValue(e.getEndereco().getEstado());
+            row.createCell(8).setCellValue(e.getEndereco().getCep());
+            row.createCell(9).setCellValue(e.getContato().getTelefone());
+            row.createCell(10).setCellValue(e.getContato().getCelular());
+            row.createCell(11).setCellValue(e.getContato().getEmail());
             
             if(e.getGenero() == Genero.MASCULINO){
-                row.createCell(11).setCellValue("Masculino");
+                row.createCell(12).setCellValue("Masculino");
             }
             else{
-                row.createCell(11).setCellValue("Feminino");
+                row.createCell(12).setCellValue("Feminino");
             }
             
-            row.createCell(12).setCellValue(e.getSetor());
-            row.createCell(13).setCellValue(e.getChSemanal());
-            row.createCell(14).setCellValue(e.isTreinadoOpRX());
+            row.createCell(13).setCellValue(e.getSetor());
+            row.createCell(14).setCellValue(e.getChSemanal());
+            row.createCell(15).setCellValue(e.isTreinadoOpRX());
             
             index+=1;
         }
@@ -137,7 +138,7 @@ public class ExportarExcel {
     
     private void gravarMedico(XSSFSheet sheet){
         //inicio cabecalho
-        String[] cabecalho = {"ID","Nome","Rua","Numero","Bairro",
+        String[] cabecalho = {"ID","Nome","Data de Nascimentos","Rua","Numero","Bairro",
             "Cidade","Estado","CEP","Telefone","Celular","Email","Genero",
             "Setor","Carga Horaria","Cirurgião?","CRM","Areas de Especialidade"};
         
@@ -152,27 +153,28 @@ public class ExportarExcel {
             
             row.createCell(0).setCellValue(m.getIdMedico());
             row.createCell(1).setCellValue(m.getNomeCompleto());
-            row.createCell(2).setCellValue(m.getEndereco().getRua());
-            row.createCell(3).setCellValue(m.getEndereco().getNumero());
-            row.createCell(4).setCellValue(m.getEndereco().getBairro());
-            row.createCell(5).setCellValue(m.getEndereco().getCidade());
-            row.createCell(6).setCellValue(m.getEndereco().getEstado());
-            row.createCell(7).setCellValue(m.getEndereco().getCep());
-            row.createCell(8).setCellValue(m.getContato().getTelefone());
-            row.createCell(9).setCellValue(m.getContato().getCelular());
-            row.createCell(10).setCellValue(m.getContato().getEmail());
+            row.createCell(2).setCellValue(m.getDataNascimento());
+            row.createCell(3).setCellValue(m.getEndereco().getRua());
+            row.createCell(4).setCellValue(m.getEndereco().getNumero());
+            row.createCell(5).setCellValue(m.getEndereco().getBairro());
+            row.createCell(6).setCellValue(m.getEndereco().getCidade());
+            row.createCell(7).setCellValue(m.getEndereco().getEstado());
+            row.createCell(8).setCellValue(m.getEndereco().getCep());
+            row.createCell(9).setCellValue(m.getContato().getTelefone());
+            row.createCell(10).setCellValue(m.getContato().getCelular());
+            row.createCell(11).setCellValue(m.getContato().getEmail());
             
             if(m.getGenero() == Genero.MASCULINO){
-                row.createCell(11).setCellValue("Masculino");
+                row.createCell(12).setCellValue("Masculino");
             }
             else{
-                row.createCell(11).setCellValue("Feminino");
+                row.createCell(12).setCellValue("Feminino");
             }
             
-            row.createCell(12).setCellValue(m.getSetor());
-            row.createCell(13).setCellValue(m.getChSemanal());
-            row.createCell(14).setCellValue(m.isCirurgiao());
-            row.createCell(15).setCellValue(m.getNumeroCRM());
+            row.createCell(13).setCellValue(m.getSetor());
+            row.createCell(14).setCellValue(m.getChSemanal());
+            row.createCell(15).setCellValue(m.isCirurgiao());
+            row.createCell(16).setCellValue(m.getNumeroCRM());
             
             String areas = "";
             for(String a : m.getAreasEspecialidade()){
@@ -181,7 +183,7 @@ public class ExportarExcel {
             //retiro espaço e virgula extra no final
             areas = areas.substring(0, areas.length() -2);
             
-            row.createCell(16).setCellValue(areas);
+            row.createCell(17).setCellValue(areas);
             
             index+=1;
         }
@@ -189,7 +191,7 @@ public class ExportarExcel {
     
     private void gravarPaciente(XSSFSheet sheet){
         //inicio cabecalho
-        String[] cabecalho = {"ID","Nome","Rua","Numero","Bairro",
+        String[] cabecalho = {"ID","Nome","Data de Nascimentos","Rua","Numero","Bairro",
             "Cidade","Estado","CEP","Telefone","Celular","Email","Genero",
             "Data de Cadastro","Idade","Observação Geral"};
         
@@ -204,26 +206,27 @@ public class ExportarExcel {
             
             row.createCell(0).setCellValue(p.getIdPaciente());
             row.createCell(1).setCellValue(p.getNomeCompleto());
-            row.createCell(2).setCellValue(p.getEndereco().getRua());
-            row.createCell(3).setCellValue(p.getEndereco().getNumero());
-            row.createCell(4).setCellValue(p.getEndereco().getBairro());
-            row.createCell(5).setCellValue(p.getEndereco().getCidade());
-            row.createCell(6).setCellValue(p.getEndereco().getEstado());
-            row.createCell(7).setCellValue(p.getEndereco().getCep());
-            row.createCell(8).setCellValue(p.getContato().getTelefone());
-            row.createCell(9).setCellValue(p.getContato().getCelular());
-            row.createCell(10).setCellValue(p.getContato().getEmail());
+            row.createCell(2).setCellValue(p.getDataNascimento());
+            row.createCell(3).setCellValue(p.getEndereco().getRua());
+            row.createCell(4).setCellValue(p.getEndereco().getNumero());
+            row.createCell(5).setCellValue(p.getEndereco().getBairro());
+            row.createCell(6).setCellValue(p.getEndereco().getCidade());
+            row.createCell(7).setCellValue(p.getEndereco().getEstado());
+            row.createCell(8).setCellValue(p.getEndereco().getCep());
+            row.createCell(9).setCellValue(p.getContato().getTelefone());
+            row.createCell(10).setCellValue(p.getContato().getCelular());
+            row.createCell(11).setCellValue(p.getContato().getEmail());
             
             if(p.getGenero() == Genero.MASCULINO){
-                row.createCell(11).setCellValue("Masculino");
+                row.createCell(12).setCellValue("Masculino");
             }
             else{
-                row.createCell(11).setCellValue("Feminino");
+                row.createCell(12).setCellValue("Feminino");
             }
             
-            row.createCell(12).setCellValue(p.getDataCadastro());
-            row.createCell(13).setCellValue(p.getIdade());
-            row.createCell(14).setCellValue(p.getObsGeral());
+            row.createCell(13).setCellValue(p.getDataCadastro());
+            row.createCell(14).setCellValue(p.getIdade());
+            row.createCell(15).setCellValue(p.getObsGeral());
             
             index+=1;
         }

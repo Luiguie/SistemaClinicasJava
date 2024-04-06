@@ -35,16 +35,21 @@ public class menuExcel extends CRUD_JPanel {
     private void initComponents() {
 
         menuExcel = new javax.swing.JPanel();
-        caminhoLabel = new javax.swing.JLabel();
+        caminhoLabelExport = new javax.swing.JLabel();
         nomeLabel = new javax.swing.JLabel();
         nomeField = new javax.swing.JTextField();
         exportLabel = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
-        caminhoField = new javax.swing.JTextField();
-        caminhoBtn = new javax.swing.JButton();
+        caminhoFieldExport = new javax.swing.JTextField();
+        caminhoBtnExport = new javax.swing.JButton();
         exportBtn = new javax.swing.JButton();
+        caminhoFieldImport = new javax.swing.JTextField();
+        caminhoLabelImport = new javax.swing.JLabel();
+        caminhoBtnImport = new javax.swing.JButton();
+        importLabel = new javax.swing.JLabel();
+        importBtn = new javax.swing.JButton();
 
-        caminhoLabel.setText("Caminho");
+        caminhoLabelExport.setText("Caminho");
 
         nomeLabel.setText("Nome do Arquivo");
 
@@ -58,12 +63,12 @@ public class menuExcel extends CRUD_JPanel {
             }
         });
 
-        caminhoField.setEditable(false);
+        caminhoFieldExport.setEditable(false);
 
-        caminhoBtn.setText("📁");
-        caminhoBtn.addActionListener(new java.awt.event.ActionListener() {
+        caminhoBtnExport.setText("📁");
+        caminhoBtnExport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                caminhoBtnActionPerformed(evt);
+                caminhoBtnExportActionPerformed(evt);
             }
         });
 
@@ -71,6 +76,28 @@ public class menuExcel extends CRUD_JPanel {
         exportBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exportBtnActionPerformed(evt);
+            }
+        });
+
+        caminhoFieldImport.setEditable(false);
+
+        caminhoLabelImport.setText("Caminho");
+
+        caminhoBtnImport.setText("📁");
+        caminhoBtnImport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                caminhoBtnImportActionPerformed(evt);
+            }
+        });
+
+        importLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        importLabel.setText("Importar");
+        importLabel.setToolTipText("");
+
+        importBtn.setText("IMPORTAR");
+        importBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                importBtnActionPerformed(evt);
             }
         });
 
@@ -82,7 +109,7 @@ public class menuExcel extends CRUD_JPanel {
                 .addGroup(menuExcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menuExcelLayout.createSequentialGroup()
                         .addGap(92, 92, 92)
-                        .addComponent(caminhoLabel))
+                        .addComponent(caminhoLabelExport))
                     .addGroup(menuExcelLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(backBtn)))
@@ -95,11 +122,19 @@ public class menuExcel extends CRUD_JPanel {
                     .addComponent(nomeLabel)
                     .addComponent(nomeField, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(menuExcelLayout.createSequentialGroup()
-                        .addComponent(caminhoField, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(caminhoFieldExport, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(caminhoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(caminhoBtnExport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(caminhoLabelImport)
+                    .addGroup(menuExcelLayout.createSequentialGroup()
+                        .addComponent(caminhoFieldImport, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(caminhoBtnImport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(importLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
-                .addComponent(exportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(menuExcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(exportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(importBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         menuExcelLayout.setVerticalGroup(
@@ -113,19 +148,32 @@ public class menuExcel extends CRUD_JPanel {
                         .addGap(15, 15, 15)
                         .addComponent(backBtn)))
                 .addGap(18, 18, 18)
-                .addComponent(caminhoLabel)
+                .addComponent(caminhoLabelExport)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(menuExcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(menuExcelLayout.createSequentialGroup()
                         .addGroup(menuExcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(caminhoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(caminhoBtn))
+                            .addComponent(caminhoFieldExport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(caminhoBtnExport))
                         .addGap(1, 1, 1)
                         .addComponent(nomeLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nomeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(exportBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(426, Short.MAX_VALUE))
+                .addGap(149, 149, 149)
+                .addComponent(importLabel)
+                .addGap(15, 15, 15)
+                .addComponent(caminhoLabelImport)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(menuExcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuExcelLayout.createSequentialGroup()
+                        .addGroup(menuExcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(caminhoFieldImport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(caminhoBtnImport))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuExcelLayout.createSequentialGroup()
+                        .addComponent(importBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                        .addGap(149, 149, 149))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -156,18 +204,30 @@ public class menuExcel extends CRUD_JPanel {
         getContainer().remove(this);
     }//GEN-LAST:event_backBtnActionPerformed
     
-    public boolean validar(){
+    public boolean validar(String tipo){
         //valida todos os campos presentes no Jpanel e retorna falso caso algum
         //esteja invalido
         Validador v = new Validador();
-        if(!v.validarCampo(caminhoField)){
-            JOptionPane.showMessageDialog(null, "Caminho Invalido");
+        if(tipo == "Exportar"){
+            if(!v.validarCampo(caminhoFieldExport)){
+                JOptionPane.showMessageDialog(null, "Caminho Invalido");
+                return false;
+            }
+            if(!v.validarCampo(nomeField)){
+                JOptionPane.showMessageDialog(null, "Nome Invalido");
+                return false;
+            }
+        }
+        else if(tipo == "Importar"){
+            if(!v.validarCampo(caminhoFieldImport)){
+                JOptionPane.showMessageDialog(null, "Caminho Invalido");
+                return false;
+            }
+        }
+        else{
             return false;
         }
-        if(!v.validarCampo(nomeField)){
-            JOptionPane.showMessageDialog(null, "Nome Invalido");
-            return false;
-        }
+        
         return true;
     }
     
@@ -180,34 +240,69 @@ public class menuExcel extends CRUD_JPanel {
             JOptionPane.showMessageDialog(null, "Erro na gravação");
         }
     }
+    
+    public void importar(String caminho){
+        try{
+            getBack().getImportadorExcel().importar(caminho);
+            JOptionPane.showMessageDialog(null, "Leitura Concluida");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Erro na Leitura");
+        }
+    }
+    
     private void exportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportBtnActionPerformed
-        if(validar()){
-            exportar(caminhoField.getText() + "\\" + nomeField.getText());
+        if(validar("Exportar")){
+            exportar(caminhoFieldExport.getText() + "\\" + nomeField.getText());
         }
         
     }//GEN-LAST:event_exportBtnActionPerformed
 
-    private void caminhoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caminhoBtnActionPerformed
+    private void caminhoBtnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caminhoBtnExportActionPerformed
         //instancio a janela
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int res = fileChooser.showOpenDialog(null);
         
         //checo se foi selecionado e adicionado ao campo bloqueado
-        if (res == JFileChooser.APPROVE_OPTION){
+        if(res == JFileChooser.APPROVE_OPTION){
             File selectedFolder = fileChooser.getSelectedFile();
-            caminhoField.setText(selectedFolder.getAbsolutePath());
+            caminhoFieldExport.setText(selectedFolder.getAbsolutePath());
         } 
-    }//GEN-LAST:event_caminhoBtnActionPerformed
+    }//GEN-LAST:event_caminhoBtnExportActionPerformed
+
+    private void caminhoBtnImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caminhoBtnImportActionPerformed
+        //instancio a janela
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int res = fileChooser.showOpenDialog(null);
+        
+        //checo se foi selecionado e adicionado ao campo bloqueado
+        if(res == JFileChooser.APPROVE_OPTION){
+            File selectedFile = fileChooser.getSelectedFile();
+            caminhoFieldImport.setText(selectedFile.getAbsolutePath());
+        } 
+    }//GEN-LAST:event_caminhoBtnImportActionPerformed
+
+    private void importBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importBtnActionPerformed
+        if(validar("Importar")){
+            importar(caminhoFieldImport.getText() + "\\" + nomeField.getText());
+        }
+    }//GEN-LAST:event_importBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
-    private javax.swing.JButton caminhoBtn;
-    private javax.swing.JTextField caminhoField;
-    private javax.swing.JLabel caminhoLabel;
+    private javax.swing.JButton caminhoBtnExport;
+    private javax.swing.JButton caminhoBtnImport;
+    private javax.swing.JTextField caminhoFieldExport;
+    private javax.swing.JTextField caminhoFieldImport;
+    private javax.swing.JLabel caminhoLabelExport;
+    private javax.swing.JLabel caminhoLabelImport;
     private javax.swing.JButton exportBtn;
     private javax.swing.JLabel exportLabel;
+    private javax.swing.JButton importBtn;
+    private javax.swing.JLabel importLabel;
     private javax.swing.JPanel menuExcel;
     private javax.swing.JTextField nomeField;
     private javax.swing.JLabel nomeLabel;
