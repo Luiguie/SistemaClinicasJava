@@ -11,6 +11,7 @@ package com.luisguilherme.sistemaclinicas.back;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -32,8 +33,10 @@ public class ImportarExcel {
             XSSFWorkbook book = new XSSFWorkbook(inputStream);
             
             XSSFSheet enfermeiroSheet = book.getSheet("Enfermeiros");
+            XSSFSheet medicosSheet = book.getSheet("Medicos");
             
             importarEnfermeiro(enfermeiroSheet);
+            importarMedico(medicosSheet);
             
             book.close();
         }
@@ -91,6 +94,68 @@ public class ImportarExcel {
                     Genero.FEMININO);
                 
                 back.getEnfermeiros().add(e);
+            }
+            
+            
+        }
+    }
+
+    private void importarMedico(XSSFSheet sheet){
+        // Pulando a primeira linha que tem o cabeçalho
+        int startIndex = 1;
+
+        // itero e preencho o objeto
+        for (int i = startIndex; i <= sheet.getLastRowNum(); i++){
+            Row row = sheet.getRow(i);
+            
+            if (row == null){
+                continue;
+            }
+            
+            Endereco end = new Endereco(
+                    row.getCell(3).getStringCellValue(), 
+                    (int) row.getCell(4).getNumericCellValue(), 
+                    row.getCell(5).getStringCellValue(), 
+                    row.getCell(6).getStringCellValue(), 
+                    row.getCell(7).getStringCellValue(), 
+                    (int) row.getCell(8).getNumericCellValue());
+            
+            ContatoTelEmail cont = new ContatoTelEmail(
+                    row.getCell(9).getStringCellValue(), 
+                    row.getCell(10).getStringCellValue(), 
+                    row.getCell(11).getStringCellValue());
+            
+            if(row.getCell(12).getStringCellValue() == "Masculino"){
+                Medico e = new Medico(
+                    (long) row.getCell(0).getNumericCellValue(), 
+                    (int) row.getCell(16).getNumericCellValue(), 
+                    row.getCell(15).getBooleanCellValue(), 
+                    row.getCell(13).getStringCellValue(), 
+                    (int) row.getCell(14).getNumericCellValue(), 
+                    row.getCell(1).getStringCellValue(),
+                    row.getCell(2).getDateCellValue(),
+                    end, 
+                    cont, 
+                    Genero.MASCULINO,
+                    row.getCell(17).getStringCellValue());
+                
+                back.getMedicos().add(e);
+            }
+            else{
+                Medico e = new Medico(
+                    (long) row.getCell(0).getNumericCellValue(), 
+                    (int) row.getCell(16).getNumericCellValue(), 
+                    row.getCell(15).getBooleanCellValue(), 
+                    row.getCell(13).getStringCellValue(), 
+                    (int) row.getCell(14).getNumericCellValue(), 
+                    row.getCell(1).getStringCellValue(),
+                    row.getCell(2).getDateCellValue(),
+                    end, 
+                    cont, 
+                    Genero.FEMININO,
+                    row.getCell(17).getStringCellValue());
+                
+                back.getMedicos().add(e);
             }
             
             
