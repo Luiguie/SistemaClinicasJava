@@ -61,11 +61,6 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="editPaciente" min="-2" pref="115" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="remPaciente" min="-2" pref="115" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
                                               <Component id="cadPaciente" min="-2" pref="115" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="consPaciente" min="-2" pref="115" max="-2" attributes="0"/>
@@ -73,6 +68,11 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                                               <Component id="labelPaciente" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="editPaciente" min="-2" pref="115" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="remPaciente" min="-2" pref="115" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace pref="193" max="32767" attributes="0"/>
@@ -92,13 +92,6 @@
                                               <Component id="labelMedico" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="94" pref="94" max="-2" attributes="0"/>
-                                      <Component id="labelEnfermeiro" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="labelConsultas" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="cadEnfermeiro" min="-2" pref="115" max="-2" attributes="0"/>
@@ -124,30 +117,48 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="remConsultas" min="-2" pref="115" max="-2" attributes="0"/>
                                   </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="94" pref="94" max="-2" attributes="0"/>
+                                      <Component id="labelEnfermeiro" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="labelConsultas" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
-                                      <Component id="ExportExcel" min="-2" pref="125" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="jLabel1" min="-2" pref="170" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
+                              <Component id="ExportExcel" min="-2" pref="125" max="-2" attributes="0"/>
+                              <EmptySpace pref="352" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="imgLabelPaciente" min="-2" pref="170" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="imgPanelMedico" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="114" pref="114" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                      <Component id="imgLabelEnfermeiro" min="-2" pref="170" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="imgLabelConsulta" min="-2" pref="170" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="203" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="imgPanelMedico" min="-2" max="-2" attributes="0"/>
+                          <Component id="imgLabelPaciente" min="-2" pref="170" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="labelPaciente" min="-2" max="-2" attributes="0"/>
@@ -176,9 +187,12 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel1" pref="170" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="imgLabelEnfermeiro" min="-2" pref="170" max="-2" attributes="0"/>
+                          <Component id="imgLabelConsulta" min="-2" pref="170" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="labelConsultas" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="labelEnfermeiro" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -362,7 +376,37 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExportExcelActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Container class="javax.swing.JPanel" name="imgPanelMedico">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="imgLabelMedico" pref="170" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                          <Component id="imgLabelMedico" min="-2" pref="170" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="imgLabelMedico">
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="imgLabelEnfermeiro">
+            </Component>
+            <Component class="javax.swing.JLabel" name="imgLabelConsulta">
+            </Component>
+            <Component class="javax.swing.JLabel" name="imgLabelPaciente">
             </Component>
           </SubComponents>
         </Container>

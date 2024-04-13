@@ -10,6 +10,9 @@ package com.luisguilherme.sistemaclinicas.back.front;
  */
 import com.luisguilherme.sistemaclinicas.back.SistemaClinicas;
 import java.awt.CardLayout;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 public class GUI extends javax.swing.JFrame {
 
@@ -19,6 +22,10 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         initComponents();
         setCl((CardLayout) container.getLayout());
+        load_imgs("Medico.png", imgLabelMedico);
+        load_imgs("Consulta.png", imgLabelConsulta);
+        load_imgs("Paciente.png", imgLabelPaciente);
+        load_imgs("Enfermeiro.png", imgLabelEnfermeiro);
     }
 
     public void setCl(CardLayout cl) {
@@ -27,6 +34,15 @@ public class GUI extends javax.swing.JFrame {
 
     public CardLayout getCl() {
         return cl;
+    }
+    
+    private void load_imgs(String imgName, JLabel container){
+        String path = System.getProperty("user.dir") + "\\src\\main\\java\\com\\luisguilherme\\sistemaclinicas\\back\\front\\" + imgName;
+        ImageIcon icon = new ImageIcon(path);
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(container.getWidth(), container.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        container.setIcon(scaledIcon);
     }
     
     
@@ -63,7 +79,11 @@ public class GUI extends javax.swing.JFrame {
         labelMedico = new javax.swing.JLabel();
         remMedico = new javax.swing.JButton();
         ExportExcel = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        imgPanelMedico = new javax.swing.JPanel();
+        imgLabelMedico = new javax.swing.JLabel();
+        imgLabelEnfermeiro = new javax.swing.JLabel();
+        imgLabelConsulta = new javax.swing.JLabel();
+        imgLabelPaciente = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(815, 584));
@@ -199,6 +219,22 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout imgPanelMedicoLayout = new javax.swing.GroupLayout(imgPanelMedico);
+        imgPanelMedico.setLayout(imgPanelMedicoLayout);
+        imgPanelMedicoLayout.setHorizontalGroup(
+            imgPanelMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(imgPanelMedicoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imgLabelMedico, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        imgPanelMedicoLayout.setVerticalGroup(
+            imgPanelMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, imgPanelMedicoLayout.createSequentialGroup()
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(imgLabelMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout mainWindowLayout = new javax.swing.GroupLayout(mainWindow);
         mainWindow.setLayout(mainWindowLayout);
         mainWindowLayout.setHorizontalGroup(
@@ -211,16 +247,16 @@ public class GUI extends javax.swing.JFrame {
                             .addGroup(mainWindowLayout.createSequentialGroup()
                                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(mainWindowLayout.createSequentialGroup()
-                                        .addComponent(editPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(remPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(mainWindowLayout.createSequentialGroup()
                                         .addComponent(cadPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(consPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(mainWindowLayout.createSequentialGroup()
                                         .addGap(94, 94, 94)
-                                        .addComponent(labelPaciente)))
+                                        .addComponent(labelPaciente))
+                                    .addGroup(mainWindowLayout.createSequentialGroup()
+                                        .addComponent(editPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(remPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
                                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(mainWindowLayout.createSequentialGroup()
@@ -234,12 +270,6 @@ public class GUI extends javax.swing.JFrame {
                                     .addGroup(mainWindowLayout.createSequentialGroup()
                                         .addGap(94, 94, 94)
                                         .addComponent(labelMedico))))
-                            .addGroup(mainWindowLayout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addComponent(labelEnfermeiro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelConsultas)
-                                .addGap(66, 66, 66))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainWindowLayout.createSequentialGroup()
                                 .addComponent(cadEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -258,22 +288,39 @@ public class GUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(editConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(remConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(remConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(mainWindowLayout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(labelEnfermeiro)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelConsultas)
+                                .addGap(66, 66, 66)))
                         .addGap(85, 85, 85))
                     .addGroup(mainWindowLayout.createSequentialGroup()
-                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainWindowLayout.createSequentialGroup()
-                                .addGap(273, 273, 273)
-                                .addComponent(ExportExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(mainWindowLayout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(273, 273, 273)
+                        .addComponent(ExportExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(352, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
+                .addGap(96, 96, 96)
+                .addComponent(imgLabelPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(imgPanelMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(114, 114, 114))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(imgLabelEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(imgLabelConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(121, 121, 121))
         );
         mainWindowLayout.setVerticalGroup(
             mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
-                .addGap(203, 203, 203)
+                .addGap(27, 27, 27)
+                .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(imgPanelMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imgLabelPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(mainWindowLayout.createSequentialGroup()
                         .addComponent(labelPaciente)
@@ -295,9 +342,11 @@ public class GUI extends javax.swing.JFrame {
                         .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(editMedico)
                             .addComponent(remMedico))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(imgLabelEnfermeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imgLabelConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelConsultas)
                     .addComponent(labelEnfermeiro))
@@ -533,7 +582,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton editEnfermeiro;
     private javax.swing.JButton editMedico;
     private javax.swing.JButton editPaciente;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel imgLabelConsulta;
+    private javax.swing.JLabel imgLabelEnfermeiro;
+    private javax.swing.JLabel imgLabelMedico;
+    private javax.swing.JLabel imgLabelPaciente;
+    private javax.swing.JPanel imgPanelMedico;
     private javax.swing.JLabel labelConsultas;
     private javax.swing.JLabel labelEnfermeiro;
     private javax.swing.JLabel labelMedico;
