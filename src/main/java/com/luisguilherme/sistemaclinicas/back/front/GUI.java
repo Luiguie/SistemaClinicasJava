@@ -384,6 +384,7 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadPacienteActionPerformed
+        back.getTempResponsaveis().clear();
         cadastrarPaciente panel = new cadastrarPaciente(cl, container, back);
         container.add(panel, "cadastraPaciente");
         cl.show(container, "cadastraPaciente");
